@@ -13,12 +13,12 @@ class Node:
     self.longitud = lon
     
   def add_node(self, numb):
-    self.ady_list = self.ady_list.append(numb)
+    self.ady_list.append(numb)
     
+nodo = {}
+
+nodo['1234'] = Node(3,4)  
+
+nodo['1234'].add_node(10)
   
-x = Node(1,2)
-
-x.add_node(3) #imprime None, que ni significa 'lista vacia'
-
-print x.ady_list   
-    
+print nodo['1234'].ady_list
