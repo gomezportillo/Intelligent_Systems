@@ -56,7 +56,7 @@ for i in range(0,len(lines)-1):
 		previous_line = lines[i-1].split('"')
 		current_line = lines[i].split('"')
 		print previous_line[1] + "-->" + current_line[1]
-     	n_conex += 1
+		n_conex += 1
       
 print "Lineas: " + str(i) + " || Nodos: "+str(n_nodes) + " || Conexiones: " + str(n_conex)
 
