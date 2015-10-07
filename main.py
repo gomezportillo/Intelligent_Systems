@@ -5,14 +5,16 @@
 class Adyacent_Node:
 	"""Class repressenting an adyacent node to another, giving its node and the distance""" 
 	key = 0
+	street_name = ""
 	distance = 0
   
-	def __init__(self, k, d):
+	def __init__(self, k, street, d):
 		self.key = k
+		self.street_name = street
 		self.distance = d
   
 	def toString(self):
-		return str(self.key) + " " + str(self.distance)
+		return str(self.key) + " " + str(self.street_name) + " " + str(self.distance)
 
   
 class Node:
@@ -20,18 +22,18 @@ class Node:
 	key = 0
 	latitud = 0
 	longitud = 0
-	ady_list = []
   
 	def __init__(self, k, lat, lon):
 		self.key = k
 		self.latitud = lat
 		self.longitud = lon
+		self.ady_list = [] 
     
 	def add_node(self, numb):
 		self.ady_list.append(numb)
 
 	def toString(self):
-		return "Node #" + str(self.key) + ", latitud: " +str(self.latitud) + ", longitud: " + str(self.longitud)
+		return "Node #" + str(self.key) + ", latitud: " +str(self.latitud) + ", longitud: " + str(self.longitud) + ", adyacent nodes: " + str(self.ady_list[0].toString())
 
 ##### SUPPORT #####
 
@@ -75,11 +77,7 @@ for i in range(0,len(lines)-1):
       
 print "Lineas: " + str(i) + " || Nodos: "+str(n_nodes) + " || Conexiones: " + str(n_conex)
 
+
 #impresion de prueba
-print HT['818781140'].toString()
-
-#solo queda guardar los nodos adyacentes a traves de la hashkey y computar la distancia (lo acabo mañana en un ratillo)
-#http://www.johndcook.com/blog/python_longitude_latitude/
-
-#A mi me da: Lineas: 39516 || Nodos: 10702 || Conexiones: 12023
-
+print HT['3753271185'].add_node(Adyacent_Node(2,"mata", 3))
+print HT['3753271185'].toString()
