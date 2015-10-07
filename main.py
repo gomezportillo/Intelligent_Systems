@@ -33,6 +33,21 @@ class Node:
 	def toString(self):
 		return "Node #" + str(self.key) + ", latitud: " +str(self.latitud) + ", longitud: " + str(self.longitud)
 
+##### SUPPORT #####
+
+import math
+
+def distance_on_unit_sphere(lat1, long1, lat2, long2):
+
+	degrees_to_radians = math.pi/180.0
+	phi1 = (90.0 - float(lat1))*degrees_to_radians
+	phi2 = (90.0 - float(lat2))*degrees_to_radians
+	theta1 = float(long1)*degrees_to_radians
+	theta2 = float(long2)*degrees_to_radians
+	cos = (math.sin(phi1)*math.sin(phi2)*math.cos(theta1 - theta2) + math.cos(phi1)*math.cos(phi2))
+	arc = math.acos( cos ) * 6371000
+	
+	return arc
 
 ##### MAIN #####
 
