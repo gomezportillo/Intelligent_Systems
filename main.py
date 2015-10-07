@@ -33,23 +33,30 @@ class Node:
 		self.ady_list.append(numb)
 
 	def toString(self):
-		return "Node #" + str(self.key) + ", latitud: " +str(self.latitud) + ", longitud: " + str(self.longitud) + ", adyacent nodes: " + str(self.ady_list[0].toString())
+                line = ''
+                print self.ady_list[0].toString()
+                for item in self.ady_list:
+                        line+= (str(item.toString()) + "\n")
+		return "Node #" + str(self.key) + ", latitud: " +str(self.latitud) + ", longitud: " + str(self.longitud) + "\nAdyacent nodes:\n" + line
 
 ##### SUPPORT #####
 
 import math
 
-def distance_on_unit_sphere(lat1, long1, lat2, long2):
-
-	degrees_to_radians = math.pi/180.0
-	phi1 = (90.0 - float(lat1))*degrees_to_radians
-	phi2 = (90.0 - float(lat2))*degrees_to_radians
-	theta1 = float(long1)*degrees_to_radians
-	theta2 = float(long2)*degrees_to_radians
-	cos = (math.sin(phi1)*math.sin(phi2)*math.cos(theta1 - theta2) + math.cos(phi1)*math.cos(phi2))
-	arc = math.acos( cos ) * 6371000
+def distance_on_unit_sphere(line1,line2):
+        lat1 = line1.latitud
+        lat2 = line2.latitud
+        long1 = line1.longitud
+        long2 = line2.longitud
+        degrees_to_radians = math.pi/180.0
+        phi1 = (90.0 - float(lat1))*degrees_to_radians
+        phi2 = (90.0 - float(lat2))*degrees_to_radians
+        theta1 = float(long1)*degrees_to_radians
+        theta2 = float(long2)*degrees_to_radians
+        cos = (math.sin(phi1)*math.sin(phi2)*math.cos(theta1 - theta2) + math.cos(phi1)*math.cos(phi2))
+        arc = math.acos( cos ) * 6371000
 	
-	return arc
+        return arc
 
 ##### MAIN #####
 
@@ -70,14 +77,14 @@ for i in range(0,len(lines)-1):
 
       
 	if ((lines[i].find("<nd ref=") != -1) and (lines[i-1].find("<nd ref=") != -1)):
-		previous_line = lines[i-1].split('"')
+                previous_line = lines[i-1].split('"')
 		current_line = lines[i].split('"')
+                HT[previous_line[1]].add_node(Adyacent_Node(current_line[1], "calle", distance_on_unit_sphere(HT[previous_line[1]],HT[current_line[1]])))
 		print previous_line[1] + "-->" + current_line[1]
-		n_conex += 1
-      
+                n_conex += 1
 print "Lineas: " + str(i) + " || Nodos: "+str(n_nodes) + " || Conexiones: " + str(n_conex)
 
 
 #impresion de prueba
-print HT['3753271185'].add_node(Adyacent_Node(2,"mata", 3))
-print HT['3753271185'].toString()
+#print HT['3753271185'].add_node(Adyacent_Node(2,"mata", 3))
+print HT['803292473'].toString()
