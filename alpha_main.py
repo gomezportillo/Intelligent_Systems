@@ -47,15 +47,11 @@ import sys
 
 
 def distance_on_unit_sphere(line1, line2):
-    lat1 = line1.latitud
-    lat2 = line2.latitud
-    long1 = line1.longitud
-    long2 = line2.longitud
     degrees_to_radians = math.pi / 180.0
-    phi1 = (90.0 - float(lat1)) * degrees_to_radians
-    phi2 = (90.0 - float(lat2)) * degrees_to_radians
-    theta1 = float(long1) * degrees_to_radians
-    theta2 = float(long2) * degrees_to_radians
+    phi1 = (90.0 - float(line1.latitud)) * degrees_to_radians
+    phi2 = (90.0 - float(line2.latitud)) * degrees_to_radians
+    theta1 = float(line1.longitud) * degrees_to_radians
+    theta2 = float(line2.longitud) * degrees_to_radians
     cos = (math.sin(phi1) * math.sin(phi2) * math.cos(theta1 - theta2) + math.cos(phi1) * math.cos(phi2))
     arc = math.acos(cos) * 6371000
 
@@ -76,8 +72,7 @@ with open('map.osm') as f:
 
 for i in range(0, len(lines) - 1):
     
-    if (lines[i].find("<way") != -1): #los nodos tb tienen la etiqueta <tag k="name" v=" para el nombre
-        print "Entrando en <ways>"
+    if (lines[i].find("<way") != -1): #los nodos tb tienen la etiqueta <tag k="name" v=" para el nombre: hay que distinguirlos
         we_are_in_ways_section = True
     
     if (lines[i].find("<node") != -1): #guarda cada nodo en la tabla hash 
@@ -89,19 +84,18 @@ for i in range(0, len(lines) - 1):
         HT[tokenized_line[1]] = Node(tokenized_line[1], tokenized_line[15], tokenized_line[17])
 
 
-    if ((lines[i].find("<nd ref=") != -1) and (lines[i - 1].find("<nd ref=") != -1)): #busca nodos adyacentes
+    if ((lines[i].find("<nd ref=") != -1) and (lines[i - 1].find("<nd ref=") != -1)): #busca nodos adyacentes y los guarda en una lsita temporala
         previous_line = lines[i - 1].split('"')
         current_line = lines[i].split('"')
         tmpList.append((previous_line[1], current_line[1]))
-        
         #print previous_line[1] + "-->" + current_line[1]
         n_conex += 1
     
     
-    if ((we_are_in_ways_section) and (lines[i].find("<tag k=\"name\" v="))): #si estamos en los ways y encuentra una etiqueta nombre
+    if ((we_are_in_ways_section) and (lines[i].find("<tag k=""name"" v=") != -1)): #si estamos en los ways y encuentra una etiqueta nombre
         current_line = lines[i].split('"')
-        current_city = current_line[0] #pillamos el nombre de la ciudad de la que hemos guardado los nodos antes
-        #print current_city
+        current_city = current_line[3] #pillamos el nombre de la ciudad de la que hemos guardado los nodos antes
+        print current_city
         for node, ady_node in tmpList:
             HT[node].add_node(Adyacent_Node(current_line[1], current_city, distance_on_unit_sphere(HT[previous_line[1]], HT[current_line[1]])))
         
