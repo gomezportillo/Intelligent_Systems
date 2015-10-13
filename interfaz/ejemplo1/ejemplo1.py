@@ -24,8 +24,13 @@ class GUI_prueba:
         self.window.show()
         
     def create_file(self, button):
-        file = open('myfile.txt', 'w+')
-    
+        f = open('myfile.txt', 'w+')
+
+        sentence = str(self.builder.get_object("entry1").get_text())
+
+    	f.write(sentence)
+    	
+    	self.builder.get_object("entry1").set_text("Pepitas de oro")
     
 gui = GUI_prueba()
 gtk.main()
