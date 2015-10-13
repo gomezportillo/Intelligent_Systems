@@ -36,7 +36,7 @@ class Node:
         ady_nodes = '\n'
         
         if len(self.ady_list)>0:
-            print self.ady_list[0].toString()
+            #print self.ady_list[0].toString()
             for item in self.ady_list:
                 ady_nodes += (str(item.toString()) + "\n")
         else: 
@@ -48,7 +48,6 @@ class Node:
 ##### SUPPORT #####
 
 import math
-import sys
 
 
 def distance_on_unit_sphere(line1, line2):
@@ -83,7 +82,7 @@ for i in range(0, len(lines) - 1):
     if (lines[i].find("<node") != -1): #guarda cada nodo en la tabla hash 
         tokenized_line = lines[i].split('"')
         n_nodes += 1
-        print "IDNode: " + tokenized_line[1] + " || Latitud:  " + tokenized_line[15] + " || Longitud:  " + \
+        #print "IDNode: " + tokenized_line[1] + " || Latitud:  " + tokenized_line[15] + " || Longitud:  " + \
         tokenized_line[17]
 
         HT[tokenized_line[1]] = Node(tokenized_line[1], tokenized_line[15], tokenized_line[17])
@@ -93,26 +92,29 @@ for i in range(0, len(lines) - 1):
         previous_line = lines[i - 1].split('"')
         current_line = lines[i].split('"')
         tmpList.append((previous_line[1], current_line[1]))
-        print previous_line[1] + "-->" + current_line[1]
+        #print previous_line[1] + "-->" + current_line[1]
         n_conex += 1
     
     
     #hay errores en las condiciones de este if, no guarda nodos ni ciudades
-    if ((we_are_in_ways_section) and (lines[i].find("<tag k=""name"" v=") != -1)): #si estamos en los ways y encuentra una etiqueta nombre
+    if ((we_are_in_ways_section) and (lines[i].find("name") != -1)): #si estamos en los ways y encuentra una etiqueta nombre
         current_line = lines[i].split('"')
         current_city = current_line[3] #pillamos el nombre de la ciudad de la que hemos guardado los nodos antes
-        print current_city
+        #print current_city
+        
         for node, ady_node in tmpList:
-            HT[node].add_node(Adyacent_Node(current_line[1], current_city, distance_on_unit_sphere(HT[previous_line[1]], HT[current_line[1]])))
+                        
+            HT[node].add_node(Adyacent_Node(ady_node, current_city, distance_on_unit_sphere(HT[node], HT[ady_node])))
+            HT[ady_node].add_node(Adyacent_Node(node, current_city, distance_on_unit_sphere(HT[ady_node], HT[node])))
         
         del tmpList
         tmpList = []
         
     #sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
     
-print "Lineas: " + str(i) + " || Nodos: " + str(n_nodes) + " || Conexiones: " + str(n_conex)
+print "Lineas: " + str(i) + " || Nodos: " + str(n_nodes) + " || Conexiones: " + str(n_conex) + "\n"
 
 
 # impresion de prueba
-# print HT['3753271185'].add_node(Adyacent_Node(2,"mata", 3))
-print HT['3753271186'].toString()
+#print HT['3753271185'].add_node(Adyacent_Node(2,"mata", 3))
+print HT['803292473'].toString()
