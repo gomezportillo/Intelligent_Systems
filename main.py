@@ -48,7 +48,7 @@ class Node:
 ##### SUPPORT #####
 
 import math
-
+import sys
 
 def distance_on_unit_sphere(line1, line2):
     degrees_to_radians = math.pi / 180.0
@@ -71,6 +71,10 @@ tmpList = [] #tmp list to store nores while we get the name of the street
 we_are_in_ways_section = False
 current_city = ""
 
+if len(sys.argv) != 2:
+    print "Error on number of arguments. Use ./"+sys.argv[0].split("/")[-1]+" <node ID>"
+    sys.exit(1)    
+    
 with open('map.osm') as f:
     lines = f.readlines()
 
@@ -110,11 +114,11 @@ for i in range(0, len(lines) - 1):
         del tmpList
         tmpList = []
         
-    #sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
+    sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
     
-print "Lineas: " + str(i) + " || Nodos: " + str(n_nodes) + " || Conexiones: " + str(n_conex) + "\n"
+print "\nLineas: " + str(i) + " || Nodos: " + str(n_nodes) + " || Conexiones: " + str(n_conex) + "\n"
 
-
-# impresion de prueba
-#print HT['3753271185'].add_node(Adyacent_Node(2,"mata", 3))
-print HT['803292473'].toString()
+try:
+    print HT[sys.argv[1]].toString()
+except:
+    print "Node "+ sys.argv[1] +" not available on this map" 
