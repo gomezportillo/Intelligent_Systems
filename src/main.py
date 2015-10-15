@@ -4,10 +4,7 @@
 
 class Adyacent_Node:
     """Class repressenting an adyacent node to another, giving its node and the distance"""
-    key = 0
-    street_name = ""
-    distance = 0
-
+   
     def __init__(self, k, street, d):
         self.key = k
         self.street_name = street
@@ -19,10 +16,7 @@ class Adyacent_Node:
 
 class Node:
     """Class repressenting a node in our graph"""
-    key = 0
-    latitud = 0
-    longitud = 0
-
+   
     def __init__(self, k, lat, lon):
         self.key = k
         self.latitud = lat
@@ -36,7 +30,6 @@ class Node:
         ady_nodes = '\n'
         
         if len(self.ady_list)>0:
-            #print self.ady_list[0].toString()
             for item in self.ady_list:
                 ady_nodes += (str(item.toString()) + "\n")
         else: 
@@ -51,6 +44,7 @@ import math
 import sys
 
 def distance_on_unit_sphere(line1, line2):
+    """Method for comuting the distance (in meters) from two different geografical coordinates"""
     degrees_to_radians = math.pi / 180.0
     phi1 = (90.0 - float(line1.latitud)) * degrees_to_radians
     phi2 = (90.0 - float(line2.latitud)) * degrees_to_radians
@@ -68,22 +62,22 @@ n_nodes = 0
 n_conex = 0
 HT = {}  # hash table
 tmpList = [] #tmp list to store nores while we get the name of the street
-we_are_in_ways_section = False
+we_are_in_ways_section = False #variable for distinguishing whether we are on the node or in the way "zone"
 current_city = ""
 
 if len(sys.argv) != 2:
     print "Error on number of arguments. Use ./"+sys.argv[0].split("/")[-1]+" <node ID>"
     sys.exit(1)    
     
-with open('map.osm') as f:
+with open('../map.osm') as f:
     lines = f.readlines()
 
 for i in range(0, len(lines) - 1):
     
-    if (lines[i].find("<way") != -1): #los nodos tb tienen la etiqueta <tag k="name" v=" para el nombre: hay que distinguirlos
+    if (lines[i].find("<way") != -1): 
         we_are_in_ways_section = True
     
-    if (lines[i].find("<node") != -1): #guarda cada nodo en la tabla hash 
+    if (lines[i].find("<node") != -1):
         tokenized_line = lines[i].split('"')
         n_nodes += 1
         #print "IDNode: " + tokenized_line[1] + " || Latitud:  " + tokenized_line[15] + " || Longitud:  " + \
@@ -92,7 +86,7 @@ for i in range(0, len(lines) - 1):
         HT[tokenized_line[1]] = Node(tokenized_line[1], tokenized_line[15], tokenized_line[17])
 
 
-    if ((lines[i].find("<nd ref=") != -1) and (lines[i - 1].find("<nd ref=") != -1)): #busca nodos adyacentes y los guarda en una lsita temporala
+    if ((lines[i].find("<nd ref=") != -1) and (lines[i - 1].find("<nd ref=") != -1)):
         previous_line = lines[i - 1].split('"')
         current_line = lines[i].split('"')
         tmpList.append((previous_line[1], current_line[1]))
@@ -100,10 +94,9 @@ for i in range(0, len(lines) - 1):
         n_conex += 1
     
     
-    #hay errores en las condiciones de este if, no guarda nodos ni ciudades
-    if ((we_are_in_ways_section) and (lines[i].find("name") != -1)): #si estamos en los ways y encuentra una etiqueta nombre
+    if ((we_are_in_ways_section) and (lines[i].find("name") != -1)):
         current_line = lines[i].split('"')
-        current_city = current_line[3] #pillamos el nombre de la ciudad de la que hemos guardado los nodos antes
+        current_city = current_line[3]
         #print current_city
         
         for node, ady_node in tmpList:
@@ -116,7 +109,9 @@ for i in range(0, len(lines) - 1):
         
     sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
     
-print "\nLineas: " + str(i) + " || Nodos: " + str(n_nodes) + " || Conexiones: " + str(n_conex) + "\n"
+
+print "\nLines: " + str(i) + " || Nodes: " + str(n_nodes) + " || Connections: " + str(n_conex) + "\n"
+
 
 try:
     print HT[sys.argv[1]].toString()
