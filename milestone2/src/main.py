@@ -1,35 +1,42 @@
 #! /usr/bin/env python
 
+import math
+import sys
+import bisect
+from random import randint
+import datetime
+from time import time
+
 class State:
     def __init__(self, id_state):
         self.id_state=id_state
  
+    def __repr__(self):
+        return self.id_state
         
-    def getSuccessors(self, ht):
-        return ht[self.id_state].ady_list[:] #pa copiar la lista
+    def getSuccessors(self, HT):
+        return HT[str(self.id_state)].ady_list[:]
 
     def isValid(self): pass
     def isGoal(self): pass       
         
 
 class Node_Tree:
-    def __init__(self, s, d, c, a, p):
-        self.state = s
+    
+    def __init__(self, s, d=0, c=0, a=None, p=None):
+        self.state = State(s)
         self.depth = d
         self.cost = c
-        self.value = randint(0,10000)
+        self.value = randint(0,1000000)
         self.action = a
         self.parent = p
 
-    def __init__(self, state):
-        self.state = state
-        self.depth = 0
-        self.cost = 0
-        self.action = None
-        self.parent = None
-
     def __lt__(self, other):
         return self.value < other.value
+
+    def __repr__(self):
+        return self.state.id_state + " " + str(self.value)
+
 
 ########################### HITO 1
 class Adyacent_Node:
@@ -39,7 +46,10 @@ class Adyacent_Node:
         self.key = k
         self.street_name = street
         self.distance = d
-   
+    
+    def __repr__(self):
+        return str(self.key)    
+       
     def toString(self):
         return str(self.key) + " " + str(self.street_name) + " " + str(self.distance)
 
@@ -56,6 +66,9 @@ class Node:
     def add_node(self, ady_node):
         self.ady_list.append(ady_node)
 
+    def __repr__(self):
+        return str(self.key)
+
     def toString(self):
         ady_nodes = '\n'
         
@@ -70,8 +83,8 @@ class Node:
 
 ##### SUPPORT #####
 
-import math
-import sys
+
+
 
 def distance_on_unit_sphere(line1, line2):
     """Method for comuting the distance (in meters) from two different geografical coordinates"""
@@ -137,7 +150,7 @@ for i in range(0, len(lines) - 1):
         del tmpList
         tmpList = []
         
-    sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
+    #sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
     
 
 print "\nLines: " + str(i) + " || Nodes: " + str(n_nodes) + " || Connections: " + str(n_conex) + "\n"
@@ -147,3 +160,31 @@ try:
     print HT[sys.argv[1]].toString()
 except:
     print "Node "+ sys.argv[1] +" not available on this map" 
+    sys.exit(0)
+
+## de aqui pa arriba es lo del hito 1
+frontier = []
+
+n_init = Node_Tree(str(sys.argv[1]))
+ady = n_init.state.getSuccessors(HT)
+bisect.insort(frontier, n_init)
+timestamp1 = datetime.datetime.now()
+print "Segundos desde los anteriores 10.000 nodos guardados en la frontera"
+
+while(1):    
+    prev_node = frontier[0]
+    frontier = frontier[1:]
+
+    ady = prev_node.state.getSuccessors(HT)   
+
+    for item in ady:
+
+        node = Node_Tree(item.key, prev_node.depth+1, prev_node.cost+item.distance, item.street_name, prev_node.state.id_state)
+        bisect.insort(frontier, node)
+
+        if len(frontier)%10000 == 0: 
+            print datetime.datetime.now() - timestamp1
+            timestamp1 = datetime.datetime.now()
+            print "Size of frontier: "+ str(len(frontier))
+
+#print frontier
