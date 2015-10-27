@@ -1,43 +1,37 @@
 #! /usr/bin/env python
 
-from Random import randint
-
 class State:
-    
-    def __init__(self, n, objetiv):
-        self.node = n
-        self.parent
-        self.objetives = objetiv
-        self.adyacents ={}
-        self.value = randint(0,1000)
+    def __init__(self, id_state):
+        self.id_state=id_state
+ 
+        
+    def getSuccessors(self, ht):
+        return ht[self.id_state].ady_list[:] #pa copiar la lista
 
-    def successors(self):
-        #recuperamos los adyecentes de la tablas hash       
+    def isValid(self): pass
+    def isGoal(self): pass       
+        
 
+class Node_Tree:
+    def __init__(self, s, d, c, a, p):
+        self.state = s
+        self.depth = d
+        self.cost = c
+        self.value = randint(0,10000)
+        self.action = a
+        self.parent = p
 
-        #habra que ver si uno de los objetivos absolutos es este nodo
-        if (self.n in self.objetives):
-            objetives.
-            
+    def __init__(self, state):
+        self.state = state
+        self.depth = 0
+        self.cost = 0
+        self.action = None
+        self.parent = None
 
-    def isGoal(self):
-        return False
+    def __lt__(self, other):
+        return self.value < other.value
 
-    def isValid(self):
-        return False
-
-class Frontier:
-
-    frontier = {} #La Lista
-    
-    def __init__(self, s):
-        self.frontier.add(s) #mirar sintaxis añadir nodo
-    
-    def insert(self, state):
-        if (!state.isValid())
-            self.frointier.add(state)
-
-############# HITO 1    
+########################### HITO 1
 class Adyacent_Node:
     """Class repressenting an adyacent node to another, giving its node and the distance"""
    
@@ -153,8 +147,3 @@ try:
     print HT[sys.argv[1]].toString()
 except:
     print "Node "+ sys.argv[1] +" not available on this map" 
-
-
-        
-    
-       
