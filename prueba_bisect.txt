@@ -1,0 +1,76 @@
+0:00:00.646919
+Size of frontier: 10000
+0:00:03.204665
+Size of frontier: 20000
+0:00:07.783244
+Size of frontier: 30000
+0:00:10.390592
+Size of frontier: 40000
+0:00:00.004352
+Size of frontier: 40000
+0:00:18.043493
+Size of frontier: 50000
+0:00:21.108014
+Size of frontier: 60000
+0:00:24.944747
+Size of frontier: 70000
+0:00:29.804629
+Size of frontier: 80000
+0:00:00.009406
+Size of frontier: 80000
+0:00:31.601179
+Size of frontier: 90000
+0:00:32.237691
+Size of frontier: 100000
+0:00:00.009887
+Size of frontier: 100000
+0:00:36.195809
+Size of frontier: 110000
+0:00:43.675074
+Size of frontier: 120000
+0:00:00.014326
+Size of frontier: 120000
+0:00:44.144173
+Size of frontier: 130000
+0:00:48.538633
+Size of frontier: 140000
+0:00:56.331136
+Size of frontier: 150000
+0:01:00.182078
+Size of frontier: 160000
+0:01:10.802431
+Size of frontier: 170000
+0:01:05.264314
+Size of frontier: 180000
+0:01:09.128193
+Size of frontier: 190000
+0:01:13.144072
+Size of frontier: 200000
+0:00:00.024008
+Size of frontier: 200000
+0:01:19.275262
+Size of frontier: 210000
+0:00:00.024618
+Size of frontier: 210000
+0:01:25.061638
+Size of frontier: 220000
+0:01:27.584737
+Size of frontier: 230000
+0:01:31.883899
+Size of frontier: 240000
+0:01:39.929817
+Size of frontier: 250000
+0:00:00.034397
+Size of frontier: 250000
+0:01:47.119319
+Size of frontier: 260000
+0:01:42.850555
+Size of frontier: 270000
+0:00:00.034177
+Size of frontier: 270000
+0:01:48.007742
+Size of frontier: 280000
+0:02:09.118650
+Size of frontier: 290000
+0:02:10.160734
+Size of frontier: 300000
