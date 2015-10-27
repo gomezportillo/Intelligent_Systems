@@ -1,7 +1,43 @@
 #! /usr/bin/env python
 
-# import Node
+from Random import randint
 
+class State:
+    
+    def __init__(self, n, objetiv):
+        self.node = n
+        self.parent
+        self.objetives = objetiv
+        self.adyacents ={}
+        self.value = randint(0,1000)
+
+    def successors(self):
+        #recuperamos los adyecentes de la tablas hash       
+
+
+        #habra que ver si uno de los objetivos absolutos es este nodo
+        if (self.n in self.objetives):
+            objetives.
+            
+
+    def isGoal(self):
+        return False
+
+    def isValid(self):
+        return False
+
+class Frontier:
+
+    frontier = {} #La Lista
+    
+    def __init__(self, s):
+        self.frontier.add(s) #mirar sintaxis añadir nodo
+    
+    def insert(self, state):
+        if (!state.isValid())
+            self.frointier.add(state)
+
+############# HITO 1    
 class Adyacent_Node:
     """Class repressenting an adyacent node to another, giving its node and the distance"""
    
@@ -69,7 +105,7 @@ if len(sys.argv) != 2:
     print "Error on number of arguments. Use ./"+sys.argv[0].split("/")[-1]+" <node ID>"
     sys.exit(1)    
     
-with open('../map.osm') as f:
+with open('data/map.osm') as f:
     lines = f.readlines()
 
 for i in range(0, len(lines) - 1):
@@ -117,3 +153,8 @@ try:
     print HT[sys.argv[1]].toString()
 except:
     print "Node "+ sys.argv[1] +" not available on this map" 
+
+
+        
+    
+       
