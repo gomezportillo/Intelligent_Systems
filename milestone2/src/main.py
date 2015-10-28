@@ -10,18 +10,19 @@ from time import time
 class State:
     def __init__(self, id_state):
         self.id_state=id_state
- 
+        #lista de estados por los que tiene que pasar. el resto va en la clase state space
+
     def __repr__(self):
         return self.id_state
         
-    def getSuccessors(self, HT):
+    def getSuccessors(self, HT): #ESTO VA EN LA CLASE ESTATE SPACE
         return HT[str(self.id_state)].ady_list[:]
 
     def isValid(self): pass
     def isGoal(self): pass       
         
 
-class Node_Tree:
+class Node_Tree: #lo que metes en la frontera, primo
     
     def __init__(self, s, d=0, c=0, a=None, p=None):
         self.state = State(s)
