@@ -12,7 +12,6 @@ from Node_Tree import Node_Tree
 from Adyacent_Node import Adyacent_Node
 from Node import Node
 
-
 def distance_on_unit_sphere(coord1, coord2):
     """Method for comuting the distance, in meters, from two different geografical coordinates"""
     degrees_to_radians = math.pi / 180.0
@@ -22,6 +21,7 @@ def distance_on_unit_sphere(coord1, coord2):
     theta2 = float(coord2.longitud) * degrees_to_radians
     cos = (math.sin(phi1) * math.sin(phi2) * math.cos(theta1 - theta2) + math.cos(phi1) * math.cos(phi2))
     return math.acos(cos) * 6371000
+
 
 
 if __name__ == "__main__":
