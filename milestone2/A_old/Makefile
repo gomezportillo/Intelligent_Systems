@@ -4,19 +4,11 @@ build:
 	chmod 755 ./src/main.py
 	mkdir ./data
 	wget -O ./data/map.osm http://api.openstreetmap.org/api/0.6/map?bbox=-3.9719000,38.9650000,-3.8847000,39.0062000	
-
 test:
-	python src/main.py 3753271186
-
+	./src/main.py 3753271186
 test_error:
-	python src/main.py 8032924739
-
+	./src/main.py 8032924739
 clean:
-	@rm src/*.pyc src/*~
-
-remove_all:
 	@rm -R ./data
-	@rm src/*.pyc src/*~
+	@rm src/*.pyc
 	@echo "OSM file deleted"
-
-

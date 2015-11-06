@@ -19,5 +19,5 @@ class Node_Tree:
             raise TypeError
 
     def __repr__(self):
-        return self.state.node + " " + str(self.value)
+        return self.state.id_state + " " + str(self.value)
 

@@ -1,10 +1,11 @@
-#!/usr/bin/python
 
 class State:
     '''Class repressenting a state of our problem'''
-    def __init__(self, id_state):
-        self.id_state=id_state
+
+    def __init__(self, node):
+        self.node=node
+        self.objetive_nodes = []
 
     def __repr__(self):
-        return self.id_state
+        return self.node
 
