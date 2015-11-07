@@ -23,7 +23,7 @@ class State_Space:
         return successors_list
 
     def isGoal(self, state):
-        if state.objetive_nodes:
+        if len(state.objetive_nodes) == 0:
             return True
         else:
             return False
