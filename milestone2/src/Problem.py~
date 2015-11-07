@@ -92,7 +92,7 @@ class Problem:
                       #Node_Tree(state, cost, street, depth, parent)
                 node = Node_Tree(successor[1], prev_node.cost+successor[2], successor[0], prev_node.depth+1, prev_node.state.node_map)
 
-                bisect.insort(self.frontier, node) #basura!
+                bisect.insort(self.frontier, node)
     
                 if len(self.frontier)%10000 == 0:
                     print datetime.datetime.now() - timestamp1
