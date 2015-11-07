@@ -1,10 +1,10 @@
 class Adyacent_Node:
     """Class repressenting an adyacent node to another, giving its node and the distance"""
 
-    def __init__(self, k, street, d):
+    def __init__(self, k, street, dist):
         self.key = k
         self.street_name = street
-        self.distance = d
+        self.distance = dist
     
     def __repr__(self):
         return str(self.key)    

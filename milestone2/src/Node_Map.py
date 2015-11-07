@@ -1,7 +1,7 @@
-class Node:
+class Node_Map:
     """Class repressenting a node in our graph"""   
 
-    def __init__(self, k, lat, lon):
+    def __init__(self, k, lat=0, lon=0):
         self.key = k
         self.latitud = lat
         self.longitud = lon
@@ -11,12 +11,12 @@ class Node:
         self.ady_list.append(ady_node)
 
     def __repr__(self):
-        return str(self.key)
+        return "Node map " + str(self.key)
 
     def toString(self):
         ady_nodes = '\n'
         
-        if len(self.ady_list)>0:
+        if self.ady_list:
             for item in self.ady_list:
                 ady_nodes += (str(item.toString()) + "\n")
         else: 

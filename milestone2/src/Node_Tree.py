@@ -5,7 +5,7 @@ class Node_Tree:
     '''Class repressenting the node object we will be inserting in our frontier'''   
  
     def __init__(self, s, c=0, a=None, d=0, p=None):
-        self.state = State(s)
+        self.state = s
         self.cost = c
         self.value = randint(0,100000)
         self.action = a
@@ -19,5 +19,5 @@ class Node_Tree:
             raise TypeError
 
     def __repr__(self):
-        return self.state.node + " " + str(self.value)
+        return "Node tree " +str(self.state.node_map) + ", value: " + str(self.value)
 

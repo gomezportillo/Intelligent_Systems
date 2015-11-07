@@ -10,7 +10,7 @@ from State import State
 from State_Space import State_Space
 from Node_Tree import Node_Tree
 from Adyacent_Node import Adyacent_Node
-from Node import Node
+from Node_Map import Node_Map
 from auxiliary_methods import distance_on_unit_sphere
 
 class Problem:
@@ -39,7 +39,7 @@ class Problem:
             if (lines[i].find("<node") != -1):
                 tokenized_line = lines[i].split('"')
                 n_nodes += 1
-                self.hash_table[tokenized_line[1]] = Node(tokenized_line[1], tokenized_line[15], tokenized_line[17])
+                self.hash_table[tokenized_line[1]] = Node_Map(tokenized_line[1], tokenized_line[15], tokenized_line[17])
         
         
             if ((lines[i].find("<nd ref=") != -1) and (lines[i - 1].find("<nd ref=") != -1)):
@@ -69,7 +69,7 @@ class Problem:
         print "Analysis of the .som file:\nLines: " + str(i) + " | Nodes: " + str(n_nodes) + " | Connections: " + str(n_conex) + "\n"
         
         try:
-            print self.hash_table[sys.argv[1]].toString()
+            print self.hash_table[self.initial_state.node_map.key].toString()
         except:
             print "Node "+ sys.argv[1] +" not available on this map" 
             sys.exit(0)
@@ -77,23 +77,31 @@ class Problem:
  
     def expand_frontier(self):
         
-        frontier = []
-
-        bisect.insort(frontier, self.initial_state.node) #cambiar esta basura infecta por un heapq en condiciones
+        self.frontier = []
+        initial_node = Node_Tree(self.initial_state)        
+    
+        bisect.insort(self.frontier, initial_node) #cambiar esta basura infecta por un heapq en condiciones
         timestamp1 = datetime.datetime.now()
-        
-        while True:    
-            prev_node = frontier.pop(0)
-            adyacent_list = self.state_space.getSuccessors(prev_node, self.hash_table)
+        iteration = 0
+        while True: #while item.objetive_nodes <> empty
+            prev_node = self.frontier.pop(0)
+            successors_list = self.state_space.getSuccessors(prev_node.state, self.hash_table)
+
+            for item in successors_list: #item[0]=action, item[1]=state, item[2]=cost
+                #if item.[1]objetive_nodes is empty we have found a solution
+                                #Node_Tree(state, cost, street, depth, parent)
+                node = Node_Tree(item[1], prev_node.cost+item[2], item[0], prev_node.depth+1, prev_node.state.node_map)
+
+                bisect.insort(self.frontier, node)
     
-            for item in adyacent_list:
-                                #state, cost, street, depth, parent
-                node = Node_Tree(item.key, prev_node.cost+item.distance, item.street_name, prev_node.depth+1, prev_node.state.node)
-                bisect.insort(frontier, node) #basura!!
-    
-                if len(frontier)%10000 == 0:
+                if len(self.frontier)%10000 == 0:
                     print datetime.datetime.now() - timestamp1
-                    print "Size of frontier: "+ str(len(frontier))
+                    print "Size of frontier: "+ str(len(self.frontier))
                     timestamp1 = datetime.datetime.now()
-         
-              
+
+        iteration += 1
+
+    def isGoal(self, state):
+        return self.state_space.isGoal(state)          
+
+
