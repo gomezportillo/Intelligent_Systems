@@ -35,3 +35,4 @@ class GUI_prueba:
 gui = GUI_prueba()
 gtk.main()
 
+

@@ -1,0 +1,10 @@
+redist/
+*.pyc
+*.jpg
+*.sublime-project
+*.sublime-workspace
+*.mp3
+*.wav
+dist/
+build/
+argesGUI.spec
