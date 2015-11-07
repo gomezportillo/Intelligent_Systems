@@ -12,7 +12,7 @@ test_error:
 	python src/main.py 8032924739
 
 clean:
-	@rm src/*.pyc src/*~
+	@rm -f src/*.pyc src/*~
 
 remove_all:
 	@rm -R ./data

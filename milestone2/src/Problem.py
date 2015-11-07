@@ -82,15 +82,15 @@ class Problem:
     
         bisect.insort(self.frontier, initial_node) #cambiar esta basura infecta por un heapq en condiciones
         timestamp1 = datetime.datetime.now()
-        iteration = 0
-        while True: #while item.objetive_nodes <> empty
+
+        while True: #while successor.objetive_nodes <> empty
             prev_node = self.frontier.pop(0)
             successors_list = self.state_space.getSuccessors(prev_node.state, self.hash_table)
 
-            for item in successors_list: #item[0]=action, item[1]=state, item[2]=cost
-                #if item.[1]objetive_nodes is empty we have found a solution
+            for successor in successors_list: #successor[0]=action, successor[1]=state, successor[2]=cost
+                #if successor[1].objetive_nodes is empty we have found a solution
                                 #Node_Tree(state, cost, street, depth, parent)
-                node = Node_Tree(item[1], prev_node.cost+item[2], item[0], prev_node.depth+1, prev_node.state.node_map)
+                node = Node_Tree(successor[1], prev_node.cost+successor[2], successor[0], prev_node.depth+1, prev_node.state.node_map)
 
                 bisect.insort(self.frontier, node)
     
@@ -99,7 +99,6 @@ class Problem:
                     print "Size of frontier: "+ str(len(self.frontier))
                     timestamp1 = datetime.datetime.now()
 
-        iteration += 1
 
     def isGoal(self, state):
         return self.state_space.isGoal(state)          
