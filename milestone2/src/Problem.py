@@ -5,6 +5,7 @@ import math
 import sys
 import bisect
 import datetime
+import heapq
 
 from State import State
 from State_Space import State_Space
@@ -80,11 +81,11 @@ class Problem:
         self.frontier = []
         initial_node = Node_Tree(self.initial_state)        
     
-        bisect.insort(self.frontier, initial_node) #cambiar esta basura infecta por un heapq en condiciones
+        heapq.heappush(self.frontier, initial_node)
         timestamp1 = datetime.datetime.now()
 
         while True: #while successor.objetive_nodes <> empty
-            prev_node = self.frontier.pop(0)
+            prev_node = heapq.heappop(self.frontier)
             successors_list = self.state_space.getSuccessors(prev_node.state, self.hash_table)
 
             for successor in successors_list: #successor[0]=action, successor[1]=state, successor[2]=cost
@@ -92,7 +93,7 @@ class Problem:
                       #Node_Tree(state, cost, street, depth, parent)
                 node = Node_Tree(successor[1], prev_node.cost+successor[2], successor[0], prev_node.depth+1, prev_node.state.node_map)
 
-                bisect.insort(self.frontier, node) #basura!
+                heapq.heappush(self.frontier, node)
     
                 if len(self.frontier)%10000 == 0:
                     print datetime.datetime.now() - timestamp1
