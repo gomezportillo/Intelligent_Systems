@@ -1,5 +1,5 @@
-all:
-	@echo "Use make build/test/test_error/clean"
+all: test
+
 build:
 	mkdir ./data
 	wget -O ./data/map.osm http://api.openstreetmap.org/api/0.6/map?bbox=-3.9719000,38.9650000,-3.8847000,39.0062000

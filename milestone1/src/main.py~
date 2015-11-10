@@ -69,7 +69,7 @@ if len(sys.argv) != 2:
     print "Error on number of arguments. Use ./"+sys.argv[0].split("/")[-1]+" <node ID>"
     sys.exit(1)    
     
-with open('data/map.osm') as f:
+with open('../data/map.osm') as f:
     lines = f.readlines()
 
 for i in range(0, len(lines) - 1):

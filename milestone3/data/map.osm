@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<osm version="0.6" generator="CGImap 0.4.0 (24801 thorn-01.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<osm version="0.6" generator="CGImap 0.4.0 (12355 thorn-02.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
  <bounds minlat="38.9650000" minlon="-3.9719000" maxlat="39.0062000" maxlon="-3.8847000"/>
  <node id="154748998" visible="true" version="7" changeset="25132102" timestamp="2014-08-31T07:57:11Z" user="c2r" uid="5926" lat="38.9739443" lon="-3.9123863"/>
  <node id="154749337" visible="true" version="3" changeset="5465337" timestamp="2010-08-11T18:02:34Z" user="Pedro Manuel Baeza" uid="292702" lat="38.9607975" lon="-3.8928792"/>
@@ -21652,7 +21652,7 @@
   <tag k="oneway" v="no"/>
   <tag k="source" v="catastro; local knowledge"/>
  </way>
- <way id="22959419" visible="true" version="14" changeset="30119636" timestamp="2015-04-10T15:00:51Z" user="flierfy" uid="445671">
+ <way id="22959419" visible="true" version="15" changeset="34843755" timestamp="2015-10-24T16:24:20Z" user="r0uzic" uid="59697">
   <nd ref="247378581"/>
   <nd ref="2271453081"/>
   <nd ref="2271453090"/>
@@ -21706,6 +21706,7 @@
   <tag k="gauge" v="1435"/>
   <tag k="highspeed" v="yes"/>
   <tag k="maxspeed" v="300"/>
+  <tag k="name" v="AVE"/>
   <tag k="railway" v="rail"/>
   <tag k="railway:asfa_200" v="yes"/>
   <tag k="railway:lzb" v="yes"/>
@@ -30804,31 +30805,7 @@
   <tag k="building" v="university"/>
   <tag k="name" v="Laboratorio de Hidráulica"/>
  </way>
- <way id="217843187" visible="true" version="4" changeset="30119636" timestamp="2015-04-10T14:59:27Z" user="flierfy" uid="445671">
-  <nd ref="2271453120"/>
-  <nd ref="2271453106"/>
-  <nd ref="2271453096"/>
-  <nd ref="2271453087"/>
-  <nd ref="2271453078"/>
-  <nd ref="2271453069"/>
-  <nd ref="2271453066"/>
-  <nd ref="2271453053"/>
-  <nd ref="2271453050"/>
-  <nd ref="2271453038"/>
-  <nd ref="2271453036"/>
-  <tag k="electrified" v="contact_line"/>
-  <tag k="frequency" v="50"/>
-  <tag k="gauge" v="1435"/>
-  <tag k="highspeed" v="yes"/>
-  <tag k="maxspeed" v="300"/>
-  <tag k="railway" v="rail"/>
-  <tag k="railway:asfa_200" v="yes"/>
-  <tag k="railway:lzb" v="yes"/>
-  <tag k="railway:traffic_mode" v="passenger"/>
-  <tag k="usage" v="main"/>
-  <tag k="voltage" v="25000"/>
- </way>
- <way id="82525198" visible="true" version="10" changeset="30119636" timestamp="2015-04-10T14:59:28Z" user="flierfy" uid="445671">
+ <way id="82525198" visible="true" version="11" changeset="34843755" timestamp="2015-10-24T16:16:45Z" user="r0uzic" uid="59697">
   <nd ref="960431085"/>
   <nd ref="2271453041"/>
   <nd ref="2271435813"/>
@@ -30847,257 +30824,7 @@
   <tag k="gauge" v="1435"/>
   <tag k="highspeed" v="yes"/>
   <tag k="maxspeed" v="300"/>
-  <tag k="railway" v="rail"/>
-  <tag k="railway:asfa_200" v="yes"/>
-  <tag k="railway:lzb" v="yes"/>
-  <tag k="railway:traffic_mode" v="passenger"/>
-  <tag k="usage" v="main"/>
-  <tag k="voltage" v="25000"/>
- </way>
- <way id="217843188" visible="true" version="4" changeset="30119636" timestamp="2015-04-10T14:59:33Z" user="flierfy" uid="445671">
-  <nd ref="2271453036"/>
-  <nd ref="2271453033"/>
-  <nd ref="2271453030"/>
-  <nd ref="2271453027"/>
-  <nd ref="2271453024"/>
-  <nd ref="2271453021"/>
-  <nd ref="2271453018"/>
-  <nd ref="2271453015"/>
-  <nd ref="2271453013"/>
-  <nd ref="2271453010"/>
-  <nd ref="2271453007"/>
-  <nd ref="2271453004"/>
-  <nd ref="2271453001"/>
-  <nd ref="2271452998"/>
-  <nd ref="2271452995"/>
-  <tag k="bridge" v="yes"/>
-  <tag k="electrified" v="contact_line"/>
-  <tag k="frequency" v="50"/>
-  <tag k="gauge" v="1435"/>
-  <tag k="highspeed" v="yes"/>
-  <tag k="layer" v="1"/>
-  <tag k="maxspeed" v="300"/>
-  <tag k="railway" v="rail"/>
-  <tag k="railway:asfa_200" v="yes"/>
-  <tag k="railway:lzb" v="yes"/>
-  <tag k="railway:traffic_mode" v="passenger"/>
-  <tag k="usage" v="main"/>
-  <tag k="voltage" v="25000"/>
- </way>
- <way id="82525093" visible="true" version="10" changeset="30119636" timestamp="2015-04-10T14:59:34Z" user="flierfy" uid="445671">
-  <nd ref="960429708"/>
-  <nd ref="247378738"/>
-  <nd ref="247377562"/>
-  <nd ref="247377747"/>
-  <nd ref="247377518"/>
-  <nd ref="247378260"/>
-  <nd ref="2271435808"/>
-  <nd ref="247378052"/>
-  <nd ref="247378692"/>
-  <nd ref="247378473"/>
-  <nd ref="247378875"/>
-  <nd ref="247377631"/>
-  <nd ref="247377404"/>
-  <nd ref="247378140"/>
-  <nd ref="960431085"/>
-  <tag k="bridge" v="yes"/>
-  <tag k="electrified" v="contact_line"/>
-  <tag k="frequency" v="50"/>
-  <tag k="gauge" v="1435"/>
-  <tag k="highspeed" v="yes"/>
-  <tag k="layer" v="1"/>
-  <tag k="maxspeed" v="300"/>
-  <tag k="railway" v="rail"/>
-  <tag k="railway:asfa_200" v="yes"/>
-  <tag k="railway:lzb" v="yes"/>
-  <tag k="railway:traffic_mode" v="passenger"/>
-  <tag k="usage" v="main"/>
-  <tag k="voltage" v="25000"/>
- </way>
- <way id="217856156" visible="true" version="4" changeset="30119636" timestamp="2015-04-10T15:00:47Z" user="flierfy" uid="445671">
-  <nd ref="2271625931"/>
-  <nd ref="2271625929"/>
-  <nd ref="2271625928"/>
-  <nd ref="2271625927"/>
-  <nd ref="2271625926"/>
-  <nd ref="2271625925"/>
-  <nd ref="2271625924"/>
-  <nd ref="2271625923"/>
-  <nd ref="2271625922"/>
-  <nd ref="2271625921"/>
-  <nd ref="2271625919"/>
-  <nd ref="2271625918"/>
-  <nd ref="2271625917"/>
-  <nd ref="2271625916"/>
-  <nd ref="2271625915"/>
-  <nd ref="2271467626"/>
-  <nd ref="2271467624"/>
-  <nd ref="2271467623"/>
-  <nd ref="2271467622"/>
-  <nd ref="2271467619"/>
-  <nd ref="2271467618"/>
-  <nd ref="2271467617"/>
-  <nd ref="2271467616"/>
-  <nd ref="2271467615"/>
-  <nd ref="2271467614"/>
-  <nd ref="2271467613"/>
-  <nd ref="2271467612"/>
-  <nd ref="2271467610"/>
-  <nd ref="2271467609"/>
-  <nd ref="2271467607"/>
-  <nd ref="2271467606"/>
-  <nd ref="2271467605"/>
-  <nd ref="2271467604"/>
-  <nd ref="2271467603"/>
-  <nd ref="2271467602"/>
-  <nd ref="2271467600"/>
-  <nd ref="2271467599"/>
-  <nd ref="2271467598"/>
-  <nd ref="2271453134"/>
-  <nd ref="2271453130"/>
-  <nd ref="2271453122"/>
-  <nd ref="2271453120"/>
-  <tag k="electrified" v="contact_line"/>
-  <tag k="frequency" v="50"/>
-  <tag k="gauge" v="1435"/>
-  <tag k="highspeed" v="yes"/>
-  <tag k="maxspeed" v="300"/>
-  <tag k="railway" v="rail"/>
-  <tag k="railway:asfa_200" v="yes"/>
-  <tag k="railway:lzb" v="yes"/>
-  <tag k="railway:traffic_mode" v="passenger"/>
-  <tag k="usage" v="main"/>
-  <tag k="voltage" v="25000"/>
- </way>
- <way id="217843192" visible="true" version="4" changeset="30119636" timestamp="2015-04-10T15:00:56Z" user="flierfy" uid="445671">
-  <nd ref="2271452995"/>
-  <nd ref="2271452993"/>
-  <nd ref="2271452990"/>
-  <nd ref="2271452987"/>
-  <nd ref="2271452984"/>
-  <nd ref="2271139953"/>
-  <nd ref="2271139951"/>
-  <nd ref="2271139950"/>
-  <nd ref="2271139949"/>
-  <nd ref="2271139948"/>
-  <nd ref="2271119899"/>
-  <nd ref="2271119898"/>
-  <nd ref="2271119897"/>
-  <nd ref="2271119896"/>
-  <nd ref="2271119895"/>
-  <nd ref="2271119894"/>
-  <nd ref="2271119891"/>
-  <nd ref="2271117475"/>
-  <nd ref="2271117473"/>
-  <nd ref="2271117470"/>
-  <nd ref="2271117468"/>
-  <nd ref="2271117467"/>
-  <nd ref="2271117466"/>
-  <nd ref="2271117465"/>
-  <nd ref="2271117464"/>
-  <nd ref="2271117463"/>
-  <nd ref="2271117462"/>
-  <nd ref="2271117460"/>
-  <nd ref="2271117458"/>
-  <nd ref="2271117457"/>
-  <nd ref="2271117454"/>
-  <nd ref="2271117447"/>
-  <nd ref="2271117445"/>
-  <nd ref="2271117444"/>
-  <nd ref="2271117443"/>
-  <nd ref="2271117442"/>
-  <nd ref="2271117439"/>
-  <nd ref="2271117438"/>
-  <nd ref="2271117437"/>
-  <nd ref="2271114607"/>
-  <nd ref="2271114606"/>
-  <nd ref="2271114603"/>
-  <nd ref="2271114602"/>
-  <nd ref="2271114601"/>
-  <nd ref="2271114600"/>
-  <nd ref="2271114599"/>
-  <nd ref="2271114598"/>
-  <nd ref="2271114597"/>
-  <nd ref="2271114596"/>
-  <nd ref="2271113944"/>
-  <nd ref="2271113943"/>
-  <nd ref="2271113942"/>
-  <nd ref="2271113941"/>
-  <nd ref="2271113940"/>
-  <nd ref="2271113939"/>
-  <tag k="electrified" v="contact_line"/>
-  <tag k="frequency" v="50"/>
-  <tag k="gauge" v="1435"/>
-  <tag k="highspeed" v="yes"/>
-  <tag k="maxspeed" v="300"/>
-  <tag k="railway" v="rail"/>
-  <tag k="railway:asfa_200" v="yes"/>
-  <tag k="railway:lzb" v="yes"/>
-  <tag k="railway:traffic_mode" v="passenger"/>
-  <tag k="usage" v="main"/>
-  <tag k="voltage" v="25000"/>
- </way>
- <way id="204509691" visible="true" version="10" changeset="30119636" timestamp="2015-04-10T15:00:56Z" user="flierfy" uid="445671">
-  <nd ref="247378769"/>
-  <nd ref="247378991"/>
-  <nd ref="247379297"/>
-  <nd ref="247378489"/>
-  <nd ref="247378675"/>
-  <nd ref="247378002"/>
-  <nd ref="247378205"/>
-  <nd ref="247377484"/>
-  <nd ref="247377723"/>
-  <nd ref="247378975"/>
-  <nd ref="247379216"/>
-  <nd ref="247378631"/>
-  <nd ref="247377630"/>
-  <nd ref="247377942"/>
-  <nd ref="2271114605"/>
-  <nd ref="247378645"/>
-  <nd ref="247379207"/>
-  <nd ref="247378915"/>
-  <nd ref="247377659"/>
-  <nd ref="2271117441"/>
-  <nd ref="247378193"/>
-  <nd ref="247377967"/>
-  <nd ref="247378720"/>
-  <nd ref="2271117446"/>
-  <nd ref="2271117453"/>
-  <nd ref="2271117456"/>
-  <nd ref="247379018"/>
-  <nd ref="247377684"/>
-  <nd ref="247379219"/>
-  <nd ref="247378963"/>
-  <nd ref="247377645"/>
-  <nd ref="247378187"/>
-  <nd ref="247378153"/>
-  <nd ref="247378619"/>
-  <nd ref="247378405"/>
-  <nd ref="2271117469"/>
-  <nd ref="2271117472"/>
-  <nd ref="247377479"/>
-  <nd ref="247378008"/>
-  <nd ref="247378471"/>
-  <nd ref="247378985"/>
-  <nd ref="247377715"/>
-  <nd ref="247377488"/>
-  <nd ref="247378240"/>
-  <nd ref="247378022"/>
-  <nd ref="247378684"/>
-  <nd ref="247378331"/>
-  <nd ref="247378765"/>
-  <nd ref="247377567"/>
-  <nd ref="247377382"/>
-  <nd ref="247378158"/>
-  <nd ref="247377945"/>
-  <nd ref="247378609"/>
-  <nd ref="247378513"/>
-  <nd ref="960429708"/>
-  <tag k="electrified" v="contact_line"/>
-  <tag k="frequency" v="50"/>
-  <tag k="gauge" v="1435"/>
-  <tag k="highspeed" v="yes"/>
-  <tag k="maxspeed" v="300"/>
+  <tag k="name" v="AVE"/>
   <tag k="railway" v="rail"/>
   <tag k="railway:asfa_200" v="yes"/>
   <tag k="railway:lzb" v="yes"/>
@@ -37056,6 +36783,287 @@
   <tag k="name" v="Avenida de Europa"/>
   <tag k="oneway" v="yes"/>
  </way>
+ <way id="217843187" visible="true" version="5" changeset="34843755" timestamp="2015-10-24T16:16:36Z" user="r0uzic" uid="59697">
+  <nd ref="2271453120"/>
+  <nd ref="2271453106"/>
+  <nd ref="2271453096"/>
+  <nd ref="2271453087"/>
+  <nd ref="2271453078"/>
+  <nd ref="2271453069"/>
+  <nd ref="2271453066"/>
+  <nd ref="2271453053"/>
+  <nd ref="2271453050"/>
+  <nd ref="2271453038"/>
+  <nd ref="2271453036"/>
+  <tag k="electrified" v="contact_line"/>
+  <tag k="frequency" v="50"/>
+  <tag k="gauge" v="1435"/>
+  <tag k="highspeed" v="yes"/>
+  <tag k="maxspeed" v="300"/>
+  <tag k="name" v="AVE"/>
+  <tag k="railway" v="rail"/>
+  <tag k="railway:asfa_200" v="yes"/>
+  <tag k="railway:lzb" v="yes"/>
+  <tag k="railway:traffic_mode" v="passenger"/>
+  <tag k="usage" v="main"/>
+  <tag k="voltage" v="25000"/>
+ </way>
+ <way id="217843188" visible="true" version="5" changeset="34843755" timestamp="2015-10-24T16:17:10Z" user="r0uzic" uid="59697">
+  <nd ref="2271453036"/>
+  <nd ref="2271453033"/>
+  <nd ref="2271453030"/>
+  <nd ref="2271453027"/>
+  <nd ref="2271453024"/>
+  <nd ref="2271453021"/>
+  <nd ref="2271453018"/>
+  <nd ref="2271453015"/>
+  <nd ref="2271453013"/>
+  <nd ref="2271453010"/>
+  <nd ref="2271453007"/>
+  <nd ref="2271453004"/>
+  <nd ref="2271453001"/>
+  <nd ref="2271452998"/>
+  <nd ref="2271452995"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="electrified" v="contact_line"/>
+  <tag k="frequency" v="50"/>
+  <tag k="gauge" v="1435"/>
+  <tag k="highspeed" v="yes"/>
+  <tag k="layer" v="1"/>
+  <tag k="maxspeed" v="300"/>
+  <tag k="name" v="AVE"/>
+  <tag k="railway" v="rail"/>
+  <tag k="railway:asfa_200" v="yes"/>
+  <tag k="railway:lzb" v="yes"/>
+  <tag k="railway:traffic_mode" v="passenger"/>
+  <tag k="usage" v="main"/>
+  <tag k="voltage" v="25000"/>
+ </way>
+ <way id="82525093" visible="true" version="11" changeset="34843755" timestamp="2015-10-24T16:17:10Z" user="r0uzic" uid="59697">
+  <nd ref="960429708"/>
+  <nd ref="247378738"/>
+  <nd ref="247377562"/>
+  <nd ref="247377747"/>
+  <nd ref="247377518"/>
+  <nd ref="247378260"/>
+  <nd ref="2271435808"/>
+  <nd ref="247378052"/>
+  <nd ref="247378692"/>
+  <nd ref="247378473"/>
+  <nd ref="247378875"/>
+  <nd ref="247377631"/>
+  <nd ref="247377404"/>
+  <nd ref="247378140"/>
+  <nd ref="960431085"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="electrified" v="contact_line"/>
+  <tag k="frequency" v="50"/>
+  <tag k="gauge" v="1435"/>
+  <tag k="highspeed" v="yes"/>
+  <tag k="layer" v="1"/>
+  <tag k="maxspeed" v="300"/>
+  <tag k="name" v="AVE"/>
+  <tag k="railway" v="rail"/>
+  <tag k="railway:asfa_200" v="yes"/>
+  <tag k="railway:lzb" v="yes"/>
+  <tag k="railway:traffic_mode" v="passenger"/>
+  <tag k="usage" v="main"/>
+  <tag k="voltage" v="25000"/>
+ </way>
+ <way id="217856156" visible="true" version="5" changeset="34843755" timestamp="2015-10-24T16:24:10Z" user="r0uzic" uid="59697">
+  <nd ref="2271625931"/>
+  <nd ref="2271625929"/>
+  <nd ref="2271625928"/>
+  <nd ref="2271625927"/>
+  <nd ref="2271625926"/>
+  <nd ref="2271625925"/>
+  <nd ref="2271625924"/>
+  <nd ref="2271625923"/>
+  <nd ref="2271625922"/>
+  <nd ref="2271625921"/>
+  <nd ref="2271625919"/>
+  <nd ref="2271625918"/>
+  <nd ref="2271625917"/>
+  <nd ref="2271625916"/>
+  <nd ref="2271625915"/>
+  <nd ref="2271467626"/>
+  <nd ref="2271467624"/>
+  <nd ref="2271467623"/>
+  <nd ref="2271467622"/>
+  <nd ref="2271467619"/>
+  <nd ref="2271467618"/>
+  <nd ref="2271467617"/>
+  <nd ref="2271467616"/>
+  <nd ref="2271467615"/>
+  <nd ref="2271467614"/>
+  <nd ref="2271467613"/>
+  <nd ref="2271467612"/>
+  <nd ref="2271467610"/>
+  <nd ref="2271467609"/>
+  <nd ref="2271467607"/>
+  <nd ref="2271467606"/>
+  <nd ref="2271467605"/>
+  <nd ref="2271467604"/>
+  <nd ref="2271467603"/>
+  <nd ref="2271467602"/>
+  <nd ref="2271467600"/>
+  <nd ref="2271467599"/>
+  <nd ref="2271467598"/>
+  <nd ref="2271453134"/>
+  <nd ref="2271453130"/>
+  <nd ref="2271453122"/>
+  <nd ref="2271453120"/>
+  <tag k="electrified" v="contact_line"/>
+  <tag k="frequency" v="50"/>
+  <tag k="gauge" v="1435"/>
+  <tag k="highspeed" v="yes"/>
+  <tag k="maxspeed" v="300"/>
+  <tag k="name" v="AVE"/>
+  <tag k="railway" v="rail"/>
+  <tag k="railway:asfa_200" v="yes"/>
+  <tag k="railway:lzb" v="yes"/>
+  <tag k="railway:traffic_mode" v="passenger"/>
+  <tag k="usage" v="main"/>
+  <tag k="voltage" v="25000"/>
+ </way>
+ <way id="217843192" visible="true" version="5" changeset="34843755" timestamp="2015-10-24T16:24:59Z" user="r0uzic" uid="59697">
+  <nd ref="2271452995"/>
+  <nd ref="2271452993"/>
+  <nd ref="2271452990"/>
+  <nd ref="2271452987"/>
+  <nd ref="2271452984"/>
+  <nd ref="2271139953"/>
+  <nd ref="2271139951"/>
+  <nd ref="2271139950"/>
+  <nd ref="2271139949"/>
+  <nd ref="2271139948"/>
+  <nd ref="2271119899"/>
+  <nd ref="2271119898"/>
+  <nd ref="2271119897"/>
+  <nd ref="2271119896"/>
+  <nd ref="2271119895"/>
+  <nd ref="2271119894"/>
+  <nd ref="2271119891"/>
+  <nd ref="2271117475"/>
+  <nd ref="2271117473"/>
+  <nd ref="2271117470"/>
+  <nd ref="2271117468"/>
+  <nd ref="2271117467"/>
+  <nd ref="2271117466"/>
+  <nd ref="2271117465"/>
+  <nd ref="2271117464"/>
+  <nd ref="2271117463"/>
+  <nd ref="2271117462"/>
+  <nd ref="2271117460"/>
+  <nd ref="2271117458"/>
+  <nd ref="2271117457"/>
+  <nd ref="2271117454"/>
+  <nd ref="2271117447"/>
+  <nd ref="2271117445"/>
+  <nd ref="2271117444"/>
+  <nd ref="2271117443"/>
+  <nd ref="2271117442"/>
+  <nd ref="2271117439"/>
+  <nd ref="2271117438"/>
+  <nd ref="2271117437"/>
+  <nd ref="2271114607"/>
+  <nd ref="2271114606"/>
+  <nd ref="2271114603"/>
+  <nd ref="2271114602"/>
+  <nd ref="2271114601"/>
+  <nd ref="2271114600"/>
+  <nd ref="2271114599"/>
+  <nd ref="2271114598"/>
+  <nd ref="2271114597"/>
+  <nd ref="2271114596"/>
+  <nd ref="2271113944"/>
+  <nd ref="2271113943"/>
+  <nd ref="2271113942"/>
+  <nd ref="2271113941"/>
+  <nd ref="2271113940"/>
+  <nd ref="2271113939"/>
+  <tag k="electrified" v="contact_line"/>
+  <tag k="frequency" v="50"/>
+  <tag k="gauge" v="1435"/>
+  <tag k="highspeed" v="yes"/>
+  <tag k="maxspeed" v="300"/>
+  <tag k="name" v="AVE"/>
+  <tag k="railway" v="rail"/>
+  <tag k="railway:asfa_200" v="yes"/>
+  <tag k="railway:lzb" v="yes"/>
+  <tag k="railway:traffic_mode" v="passenger"/>
+  <tag k="usage" v="main"/>
+  <tag k="voltage" v="25000"/>
+ </way>
+ <way id="204509691" visible="true" version="11" changeset="34843755" timestamp="2015-10-24T16:25:00Z" user="r0uzic" uid="59697">
+  <nd ref="247378769"/>
+  <nd ref="247378991"/>
+  <nd ref="247379297"/>
+  <nd ref="247378489"/>
+  <nd ref="247378675"/>
+  <nd ref="247378002"/>
+  <nd ref="247378205"/>
+  <nd ref="247377484"/>
+  <nd ref="247377723"/>
+  <nd ref="247378975"/>
+  <nd ref="247379216"/>
+  <nd ref="247378631"/>
+  <nd ref="247377630"/>
+  <nd ref="247377942"/>
+  <nd ref="2271114605"/>
+  <nd ref="247378645"/>
+  <nd ref="247379207"/>
+  <nd ref="247378915"/>
+  <nd ref="247377659"/>
+  <nd ref="2271117441"/>
+  <nd ref="247378193"/>
+  <nd ref="247377967"/>
+  <nd ref="247378720"/>
+  <nd ref="2271117446"/>
+  <nd ref="2271117453"/>
+  <nd ref="2271117456"/>
+  <nd ref="247379018"/>
+  <nd ref="247377684"/>
+  <nd ref="247379219"/>
+  <nd ref="247378963"/>
+  <nd ref="247377645"/>
+  <nd ref="247378187"/>
+  <nd ref="247378153"/>
+  <nd ref="247378619"/>
+  <nd ref="247378405"/>
+  <nd ref="2271117469"/>
+  <nd ref="2271117472"/>
+  <nd ref="247377479"/>
+  <nd ref="247378008"/>
+  <nd ref="247378471"/>
+  <nd ref="247378985"/>
+  <nd ref="247377715"/>
+  <nd ref="247377488"/>
+  <nd ref="247378240"/>
+  <nd ref="247378022"/>
+  <nd ref="247378684"/>
+  <nd ref="247378331"/>
+  <nd ref="247378765"/>
+  <nd ref="247377567"/>
+  <nd ref="247377382"/>
+  <nd ref="247378158"/>
+  <nd ref="247377945"/>
+  <nd ref="247378609"/>
+  <nd ref="247378513"/>
+  <nd ref="960429708"/>
+  <tag k="electrified" v="contact_line"/>
+  <tag k="frequency" v="50"/>
+  <tag k="gauge" v="1435"/>
+  <tag k="highspeed" v="yes"/>
+  <tag k="maxspeed" v="300"/>
+  <tag k="name" v="AVE"/>
+  <tag k="railway" v="rail"/>
+  <tag k="railway:asfa_200" v="yes"/>
+  <tag k="railway:lzb" v="yes"/>
+  <tag k="railway:traffic_mode" v="passenger"/>
+  <tag k="usage" v="main"/>
+  <tag k="voltage" v="25000"/>
+ </way>
  <way id="368437048" visible="true" version="1" changeset="33699346" timestamp="2015-08-31T09:48:28Z" user="rubensd" uid="472193">
   <nd ref="3051415136"/>
   <nd ref="154749033"/>
@@ -37880,7 +37888,7 @@
   <tag k="sport" v="bullfighting"/>
   <tag k="type" v="multipolygon"/>
  </relation>
- <relation id="1254828" visible="true" version="99" changeset="32314822" timestamp="2015-06-30T18:04:50Z" user="Takeoff" uid="438250">
+ <relation id="1254828" visible="true" version="100" changeset="34843755" timestamp="2015-10-24T16:15:55Z" user="r0uzic" uid="59697">
   <member type="way" ref="218661054" role=""/>
   <member type="way" ref="79961564" role=""/>
   <member type="way" ref="22742055" role=""/>
@@ -38270,17 +38278,16 @@
   <member type="way" ref="142211064" role=""/>
   <member type="way" ref="4811895" role=""/>
   <tag k="electrified" v="contact_line"/>
-  <tag k="fixme" v="verify that stops Puertollano and Veredas are actually on this AVE line..."/>
   <tag k="frequency" v="50"/>
   <tag k="gauge" v="1435"/>
-  <tag k="name" v="AVE Madrid-Sevilla"/>
+  <tag k="name" v="AVE Madrid - Sevilla"/>
   <tag k="note" v="Linea 010 Adif"/>
   <tag k="ref" v="AVE"/>
   <tag k="route" v="rail"/>
   <tag k="type" v="route"/>
   <tag k="voltage" v="25000"/>
  </relation>
- <relation id="1374172" visible="true" version="84" changeset="32314822" timestamp="2015-06-30T18:04:42Z" user="Takeoff" uid="438250">
+ <relation id="1374172" visible="true" version="85" changeset="34843755" timestamp="2015-10-24T16:15:45Z" user="r0uzic" uid="59697">
   <member type="way" ref="218661054" role=""/>
   <member type="way" ref="185127046" role=""/>
   <member type="way" ref="185127048" role=""/>
@@ -38778,8 +38785,7 @@
   <member type="way" ref="142311595" role=""/>
   <member type="way" ref="142211064" role=""/>
   <member type="way" ref="4811895" role=""/>
-  <tag k="name" v="AVE Madrid-Málaga"/>
-  <tag k="note" v="Linea 030 Adif From Cordoba-to Malaga"/>
+  <tag k="name" v="AVE Madrid - Malaga"/>
   <tag k="ref" v="AVE"/>
   <tag k="route" v="train"/>
   <tag k="type" v="route"/>
