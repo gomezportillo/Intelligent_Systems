@@ -22,5 +22,5 @@ class State_Space: #hacer un constructor con los limites geograficos del mapa
 
         return successors_list
 
-    def isValid(self, state): pass #pps eso
+    def isValid(self, state): pass
 
