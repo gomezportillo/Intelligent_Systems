@@ -95,7 +95,7 @@ class Problem:
 
                 heapq.heappush(self.frontier, node)
     
-                if len(self.frontier)%100000==0: 
+                if len(self.frontier)%10000==0: 
 #                    if len(self.frontier)>10: #para imprimirlo en orden
 #                        while(len(self.frontier)):
 #                        print heapq.heappop(self.frontier)

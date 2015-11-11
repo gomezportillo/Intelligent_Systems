@@ -7,10 +7,10 @@ class Node_Tree:
     def __init__(self, s, c=0, a=None, d=0, p=None, v=randint(0,100000)):
         self.state = s
         self.cost = c
-        self.value = v
         self.action = a
         self.depth = d
         self.parent = p
+        self.value = v
 
     def __lt__(self, other):
         if isinstance(other, Node_Tree): 

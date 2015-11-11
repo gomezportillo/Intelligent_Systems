@@ -99,6 +99,6 @@ if __name__ == "__main__":
 
             if len(frontier)%50000 == 0:
                 print datetime.datetime.now() - timestamp1
-                #timestamp1 = datetime.datetime.now()
+                timestamp1 = datetime.datetime.now()
                 print "Size of frontier: "+ str(len(frontier))
                 
