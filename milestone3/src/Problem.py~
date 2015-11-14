@@ -121,7 +121,7 @@ class Problem:
 
 
     def bounded_search(self, strategy, current_depth):
-        pass 
+        return 1
 
 
 

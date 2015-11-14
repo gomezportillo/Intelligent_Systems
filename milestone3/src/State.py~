@@ -9,7 +9,7 @@ class State:
             raise TypeError
         
         self.node_map=node_map
-        self.objetive_nodes = []
+        self.objetive_nodes = objetive_nodes
 
     def __repr__(self):
         return self.node

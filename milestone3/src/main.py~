@@ -21,6 +21,6 @@ if __name__ == "__main__":
     p = Problem(State_Space(), initial_state)
     p.build_hash_table()
     #p.expand_frontier()
-    print p.search(Searching_Strategies.BFS)
+    print p.search(Searching_Strategies.BFS, 2)
         
 
