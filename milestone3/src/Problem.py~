@@ -148,7 +148,7 @@ class Problem:
             return None 
 
          
-    def create_nodes(self, successors_list, current_node, max_depth, strategy): pass #en este metodo pasa la magia
+    def create_nodes(self, successors_list, current_node, max_depth, strategy): pass
         successor_nodes = []
         
         for succ in successors_list: 

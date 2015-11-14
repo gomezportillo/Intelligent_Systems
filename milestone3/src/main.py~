@@ -22,8 +22,8 @@ if __name__ == "__main__":
     p = Problem(State_Space(boundary_coordinates), initial_state)
 
     p.build_hash_table()
-    #p.expand_frontier()
-    path = p.search(Searching_Strategies.BFS)
+    p.expand_frontier()
+    #path = p.search(Searching_Strategies.BFS)
     print "Path: " + str(path)
         
 
