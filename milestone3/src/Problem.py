@@ -130,7 +130,7 @@ class Problem:
             if isGoal(current_n.state):
                 solution = True
             else:#REVISAR ESTE ELSE, FALTA CODIGO Y ME SUENA RARO
-                LS = successors_list = self.state_space.getSuccessors(prev_node.state, self.hash_table)
+                successors_list = self.state_space.getSuccessors(prev_node.state, self.hash_table) #Alias LS en el campus virtual
                 
         if solution:
             return ##CreaSolucion(current_n)
