@@ -121,7 +121,21 @@ class Problem:
 
 
     def bounded_search(self, strategy, current_depth):
-        pass 
+        self.frontier = []
+        initial_node = Node_Tree(self.initial_state)
+        heapq.heappush(self.frontier, initial_node)
+        solution = False
+        while not solution and (not len(self.frontier) == 0):
+            current_n = heapq.heappop(self.frontier)
+            if isGoal(current_n.state):
+                solution = True
+            else:#REVISAR ESTE ELSE, FALTA CODIGO Y ME SUENA RARO
+                LS = successors_list = self.state_space.getSuccessors(prev_node.state, self.hash_table)
+                
+        if solution:
+            return ##CreaSolucion(current_n)
+        else:
+            return None
 
 
 
