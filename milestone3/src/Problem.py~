@@ -123,18 +123,35 @@ class Problem:
         return solution
 
 
+<<<<<<< HEAD
+    def bounded_search(self, strategy, max_depth):
+=======
     def bounded_search(self, strategy, current_depth):
-
+>>>>>>> f27adf04b843ebc8e241171e6f391a011a87102d
         self.frontier = []
         initial_node = Node_Tree(self.initial_state)
         heapq.heappush(self.frontier, initial_node)
         solution = False
+<<<<<<< HEAD
 
         while not solution and len(self.frontier) <> 0:
             current_node = heapq.heappop(self.frontier)
 
             if self.isGoal(current_node.state):
                 solution = True
+=======
+        while not solution and (not len(self.frontier) == 0):
+            current_n = heapq.heappop(self.frontier)
+            if isGoal(current_n.state):
+                solution = True
+            else:#REVISAR ESTE ELSE, FALTA CODIGO Y ME SUENA RARO
+                successors_list = self.state_space.getSuccessors(current_n.state, self.hash_table) #Alias LS en el campus virtual
+                
+        if solution:
+            return ##CreaSolucion(current_n)
+        else:
+            return None
+>>>>>>> f27adf04b843ebc8e241171e6f391a011a87102d
 
             else:   #REVISAR ESTE ELSE, FALTA CODIGO Y ME SUENA RARO
                 successors_list = self.state_space.getSuccessors(current_node.state, self.hash_table) #aka LS
