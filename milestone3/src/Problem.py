@@ -78,36 +78,6 @@ class Problem:
             print "Node "+ sys.argv[1] +" not available on this map" 
             sys.exit(0)
         
- 
-    def expand_frontier(self):
-        
-        self.frontier = []
-        initial_node = Node_Tree(self.initial_state)        
-    
-        heapq.heappush(self.frontier, initial_node)
-        timestamp1 = datetime.datetime.now()
-
-        while True: 
-
-            prev_node = heapq.heappop(self.frontier)
-            successors_list = self.state_space.getSuccessors(prev_node.state, self.hash_table)
-
-            for successor in successors_list: #successor[0]=action, successor[1]=state, successor[2]=cost
-                node = Node_Tree(successor[1], prev_node.cost+successor[2], successor[0], prev_node.depth+1, 
-                                 prev_node.state.node_map, randint(0,100000))
-
-                heapq.heappush(self.frontier, node)
-    
-                if len(self.frontier)%100000==0: 
-                    #if len(self.frontier)>10: #para imprimirlo en orden
-                    #    while(len(self.frontier)):
-                    #    print heapq.heappop(self.frontier)
-                    #    sys.exit(0)
-
-                    print datetime.datetime.now() - timestamp1
-                    print "Size of frontier: "+ str(len(self.frontier))
-                    #timestamp1 = datetime.datetime.now()
-
     def isGoal(self, state):
        return len(state.objetive_nodes) == 0
 
