@@ -154,21 +154,18 @@ class Problem:
         
         for succ in successors_list: 
             #calcular cost y depth en funcion de strategy
-            depth = max_depth
-            if strategy = Searching_Strategies.BFS:
-                actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, current_node.depth+1)
-            if strategy = Searching_Strategies.DFS:
-                actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, -(current_node.depth+1))
-            if strategy = Searching_Strategies.DLS:
-                pass
-            if strategy = Searching_Strategies.IDS:
-                pass
-            if strategy = Searching_Strategies.UC:
-                actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, current_node.cost+succ[2])
-            #Node_Tree(successor[1], prev_node.cost+successor[2], successor[0], prev_node.depth+1, prev_node.state.node_map, value)
-            #Node_Tree(state, cost, action, depth, parent, value)
-            successor_nodes.append(actual_succesor))
-            
+            if max_depth > current_node.depth:
+                if strategy = Searching_Strategies.BFS:
+                    actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, current_node.depth+1)
+                if strategy = Searching_Strategies.DFS:
+                    actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, -(current_node.depth+1))
+                if strategy = Searching_Strategies.DLS:
+                    pass
+                if strategy = Searching_Strategies.IDS:
+                    pass
+                if strategy = Searching_Strategies.UC:
+                    actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, current_node.cost+succ[2])
+                successor_nodes.append(actual_succesor))
         return successor_nodes
         
 
