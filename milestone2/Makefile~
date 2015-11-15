@@ -1,14 +1,24 @@
-all: test
+all: tes
 
 build:
 	chmod 755 ./src/main.py
 	mkdir ./data
 	wget -O ./data/map.osm http://api.openstreetmap.org/api/0.6/map?bbox=-3.9719000,38.9650000,-3.8847000,39.0062000	
+
 test:
-	./src/main.py 3753271186
+	python src/main.py 3753271186
+
+old:
+	python old_src/main.py 3753271186
+
 test_error:
-	./src/main.py 8032924739
+	python src/main.py 8032924739
+
 clean:
-	@rm -R ./data
-	@rm src/*.pyc
+	@rm -f src/*.pyc src/*~ old_src/*.pyc old_src/*~
+
+remove_all: clean
+	@rm -fR ./data
 	@echo "OSM file deleted"
+
+

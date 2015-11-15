@@ -8,15 +8,17 @@ build:
 test:
 	python src/main.py 3753271186
 
+old:
+	python old_src/main.py 3753271186
+
 test_error:
 	python src/main.py 8032924739
 
 clean:
-	@rm -f src/*.pyc src/*~
+	@rm -f src/*.pyc src/*~ old_src/*.pyc old_src/*~
 
-remove_all:
-	@rm -R ./data
-	@rm src/*.pyc src/*~
+remove_all: clean
+	@rm -fR ./data
 	@echo "OSM file deleted"
 
 
