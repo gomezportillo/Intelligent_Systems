@@ -30,8 +30,8 @@ if __name__ == "__main__":
 
     path = p.search(Searching_Strategies.UC)
     print "\nFinal path to " + str(sys.argv[6:])
-    for node in path:
-        print node
+    while (len(path)>0):
+        print path.pop()
 
 
 
