@@ -10,7 +10,7 @@ class State:
 
         if isinstance(node_map, Node_Map): 
             self.node_map=node_map            
-        else         
+        else:
             raise TypeError
 
         if objetives is None:
