@@ -149,22 +149,37 @@ class Problem:
             return None 
 
          
-    def create_nodes(self, successors_list, current_node, max_depth, strategy): pass #en este metodo pasa la magia
+    def create_nodes(self, successors_list, current_node, max_depth, strategy): #en este metodo pasa la magia
         successor_nodes = []
         
         for succ in successors_list: 
             #calcular cost y depth en funcion de strategy
-            cost = 0
             depth = max_depth
-
+            if strategy = Searching_Strategies.BFS:
+                actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, current_node.depth+1)
+            if strategy = Searching_Strategies.DFS:
+                actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, -(current_node.depth+1))
+            if strategy = Searching_Strategies.DLS:
+                pass
+            if strategy = Searching_Strategies.IDS:
+                pass
+            if strategy = Searching_Strategies.UC:
+                actual_succesor = Node_Tree(succ[1], current_node.cost+succ[2], succ[0], current_node.depth+1, current_node.state.node_map, current_node.cost+succ[2])
             #Node_Tree(successor[1], prev_node.cost+successor[2], successor[0], prev_node.depth+1, prev_node.state.node_map, value)
             #Node_Tree(state, cost, action, depth, parent, value)
-            successor_nodes.append(Node_Tree(succ[1], succ[2]+cost, succ[0], depth, ...))            
-
+            successor_nodes.append(actual_succesor))
+            
+        return successor_nodes
         
 
     def create_solution(self, final_node): pass
         #ir tirando de parents hasta llegar al nodo incial, parent=null
+        actual_node = final_node
+        stack = [actual_node.state.node_map.key]
+        while not actual_node.parent is None:
+            stack.append(actual_node.parent)
+            actual_node = actual_node.parent
+        return stack
 
 
 
