@@ -178,10 +178,9 @@ class Problem:
                 elif strategy == Searching_Strategies.UC:
                     pass
 
-                current_succesor = Node_Tree(state, cost, street, depth, parent, value)                 
+                actual_succesor = Node_Tree(state, cost, street, depth, parent, value)                 
 
-                successor_nodes.append(current_succesor)
-
+                successor_nodes.append(actual_succesor))
         return successor_nodes
         
 

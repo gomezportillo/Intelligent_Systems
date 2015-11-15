@@ -8,7 +8,6 @@ class State_Space: #hacer un constructor con los limites geograficos del mapa
         self.latitute_range = (boundary_coordinates[0],boundary_coordinates[2])
         self.longitud_range = (boundary_coordinates[1],boundary_coordinates[3])
         
-
     def getSuccessors(self, prev_state, hash_table):
         
         successors_list = []

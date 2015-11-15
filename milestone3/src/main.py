@@ -29,8 +29,8 @@ if __name__ == "__main__":
         var-=1
         obj_nodes.append(sys.argv[var + 7])
         
-    initial_state = State(Node_Map(sys.argv[1]),obj_nodes)
-    boundary_coordinates = (sys.argv[2], sys.argv[3],sys.argv[4],sys.argv[5])
+    initial_state = State(Node_Map(sys.argv[1]), obj_nodes)
+    boundary_coordinates = (sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
     p = Problem(State_Space(boundary_coordinates), initial_state)
 
     p.build_hash_table()
