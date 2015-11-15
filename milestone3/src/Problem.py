@@ -113,7 +113,7 @@ class Problem:
 
     def search(self, strategy, max_depth=10000, incr_depth=1):
         
-        current_depth = max_depth
+        current_depth = incr_depth
         solution = None
         
         while not solution and current_depth <= max_depth:

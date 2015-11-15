@@ -8,9 +8,10 @@ class State:
 
     def __init__(self, node_map, objetives = None):
 
-        if not isinstance(node_map, Node_Map): 
-            raise TypeError        
-        self.node_map=node_map
+        if isinstance(node_map, Node_Map): 
+            self.node_map=node_map            
+        else         
+            raise TypeError
 
         if objetives is None:
             self.objetive_nodes = []
