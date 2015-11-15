@@ -11,7 +11,8 @@ class Searching_Strategies:
 
 
 def distance_on_unit_sphere(coord1, coord2):
-    """Method for comuting the distance, in meters, from two different geografical coordinates"""
+    """ Method for comuting the distance, in meters, from two different geografical coordinates
+    """
     degrees_to_radians = math.pi / 180.0
     phi1 = (90.0 - float(coord1.latitud)) * degrees_to_radians
     phi2 = (90.0 - float(coord2.latitud)) * degrees_to_radians

@@ -1,6 +1,8 @@
-class Adyacent_Node:
-    """Class repressenting an adyacent node to another, giving its node and the distance"""
+#!/usr/bin/env python
 
+class Adyacent_Node:
+    """ Class repressenting an adyacent node to another, giving its node and the distance
+    """
     def __init__(self, k, street, dist):
         self.key = k
         self.street_name = street

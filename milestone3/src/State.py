@@ -1,16 +1,23 @@
+#!/usr/bin/env python
+
 from Node_Map import Node_Map
 
 class State:
-    '''Class repressenting a state of our problem'''
+    """ Class repressenting a state of our problem
+    """
 
-    def __init__(self, node_map, objetives):
+    def __init__(self, node_map, objetives = None):
 
         if not isinstance(node_map, Node_Map): 
-            raise TypeError
-        
+            raise TypeError        
         self.node_map=node_map
-        self.objetive_nodes = objetives
 
+        if objetives is None:
+            self.objetive_nodes = []
+        else:
+            self.objetive_nodes = objetives
+
+        
     def __repr__(self):
-        return self.node
+        return str(self.node_map)
 

@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 "Usage: python {0} <node>"
 
 import math
@@ -71,7 +73,7 @@ class Problem:
         print "Analysis of the .som file:\nLines: " + str(i) + " | Nodes: " + str(n_nodes) + " | Connections: " + str(n_conex) + "\n"
         
         try:
-            print self.hash_table[self.initial_state.node_map.key].toString()
+            print self.hash_table[self.initial_state.node_map.key]
         except:
             print "Node "+ sys.argv[1] +" not available on this map" 
             sys.exit(0)
@@ -85,14 +87,12 @@ class Problem:
         heapq.heappush(self.frontier, initial_node)
         timestamp1 = datetime.datetime.now()
 
-        while True: #while successor.objetive_nodes <> empty
+        while True: 
 
             prev_node = heapq.heappop(self.frontier)
             successors_list = self.state_space.getSuccessors(prev_node.state, self.hash_table)
 
             for successor in successors_list: #successor[0]=action, successor[1]=state, successor[2]=cost
-                #if successor[1].objetive_nodes is empty we have found a solution
-                      #Node_Tree(state, cost, street, depth, parent)
                 node = Node_Tree(successor[1], prev_node.cost+successor[2], successor[0], prev_node.depth+1, 
                                  prev_node.state.node_map, randint(0,100000))
 
@@ -109,21 +109,21 @@ class Problem:
                     #timestamp1 = datetime.datetime.now()
 
     def isGoal(self, state):
-        return len(state.objetive_nodes) == 0
-
+       return len(state.objetive_nodes) == 0
 
     def search(self, strategy, max_depth=10000, incr_depth=1):
+        
         current_depth = max_depth
         solution = None
         
         while not solution and current_depth <= max_depth:
-            solution = self.bounded_search(strategy, current_depth, max_depth)
+            solution = self.bounded_search(strategy, current_depth)
             current_depth = current_depth + incr_depth
-        
+
         return solution
 
 
-    def bounded_search(self, strategy, current_depth, max_depth):
+    def bounded_search(self, strategy, max_depth=10000):
 
         self.frontier = []
         initial_node = Node_Tree(self.initial_state)
@@ -142,7 +142,7 @@ class Problem:
 
                 for node in successor_nodes:
                     heapq.heappush(self.frontier, node)
-                
+    
         if solution:
             return self.create_solution(current_node)
         else:
@@ -153,46 +153,47 @@ class Problem:
 
         successor_nodes = []
         
-        for succ in successors_list: #Node(state, cost, street, depth, parent, value):
+        for succ in successors_list:
 
-            if max_depth > current_node.depth:
-                state = succ[1]              
-                cost = parent_node.cost + succ[2]
-                street = succ[0]
-                depth = parent_node.depth + 1
-                parent = parent_node
-                value = 0
+            state = succ[1]              
+            cost = parent_node.cost + succ[2]
+            street = succ[0]
+            depth = parent_node.depth + 1
+            parent = parent_node
+            value = 0
 
-                if strategy == Searching_Strategies.BFS:
-                    valeu = current_node.depth+1
+            if strategy == Searching_Strategies.BFS:
+                value = parent_node.depth + 1
 
-                elif strategy == Searching_Strategies.DFS:
-                    value = -(current_node.depth+1)
+            elif strategy == Searching_Strategies.DFS:
+                value = -(parent_node.depth + 1)
 
-                if strategy == Searching_Strategies.DLS:
-                    pass
+            elif strategy == Searching_Strategies.DLS:
+                value = -(parent_node.depth + 1)
 
-                elif strategy == Searching_Strategies.IDS:
-                    pass
+            elif strategy == Searching_Strategies.IDS:
+                value = -(parent_node.depth + 1)
 
-                elif strategy == Searching_Strategies.UC:
-                    pass
+            elif strategy == Searching_Strategies.UC:
+                value = cost
 
-                current_succesor = Node_Tree(state, cost, street, depth, parent, value)                 
+            current_succesor = Node_Tree(state, cost, street, depth, parent, value)                 
 
-                successor_nodes.append(current_succesor)
+            successor_nodes.append(current_succesor)
 
         return successor_nodes
         
 
 
-    def create_solution(self, final_node): pass
-        #ir tirando de parents hasta llegar al nodo incial, parent=null
-        actual_node = final_node
-        stack = [actual_node.state.node_map.key]
-        while not actual_node.parent is None:
-            stack.append(actual_node.parent)
-            actual_node = actual_node.parent
+    def create_solution(self, final_node): #ir tirando de parents hasta llegar al nodo incial, parent=null
+        
+        current_node = final_node
+        stack = [current_node]
+
+        while current_node.parent is not None:
+            stack.append(current_node.parent)
+            current_node = current_node.parent
+
         return stack
 
 

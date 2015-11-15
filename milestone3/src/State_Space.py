@@ -1,16 +1,19 @@
+#!/usr/bin/env python
+
 from State import State
 from Node_Map import Node_Map
 
 class State_Space: #hacer un constructor con los limites geograficos del mapa
-    '''Class repressenting the state space of our problem'''
-
+    """ Class repressenting the state space of our problem
+    """
     def __init__(self, boundary_coordinates):
-        self.latitute_range = (boundary_coordinates[0],boundary_coordinates[2])
-        self.longitud_range = (boundary_coordinates[1],boundary_coordinates[3])
+        self.latitute_range = (boundary_coordinates[0], boundary_coordinates[2])
+        self.longitud_range = (boundary_coordinates[1], boundary_coordinates[3])
         
 
     def getSuccessors(self, prev_state, hash_table):
-        
+        """ This method will return a list with the successors of given state
+        """
         successors_list = []
         ady_list = hash_table[prev_state.node_map.key].ady_list[:]
         
@@ -31,7 +34,8 @@ class State_Space: #hacer un constructor con los limites geograficos del mapa
 
 
     def isValid(self, node):
-        
+        """ This method will determinate if node is inside the given coordinates
+        """
         if not isinstance(node_map, Node_Map): 
             raise TypeError                
         
@@ -39,4 +43,4 @@ class State_Space: #hacer un constructor con los limites geograficos del mapa
         horizontal_check = longitud_range[0] < node.longitud and node.longitud < longitud_range[1]
 
         return vertical_check and horizontal_check
-        
+
