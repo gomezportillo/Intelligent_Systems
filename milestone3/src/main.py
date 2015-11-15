@@ -26,14 +26,12 @@ if __name__ == "__main__":
     p = Problem(State_Space(boundary_coordinates), initial_state)
 
     p.build_hash_table()
-    #p.expand_frontier()
 
     path = p.search(Searching_Strategies.UC)
+
     print "\nFinal path to " + str(sys.argv[6:])
     while (len(path)>0):
         print path.pop()
-
-
 
 
 
