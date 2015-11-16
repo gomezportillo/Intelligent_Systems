@@ -28,8 +28,11 @@ if __name__ == "__main__":
     p.build_hash_table()
 
     path = p.search(Searching_Strategies.UC)
-
-    print "\nFinal path to " + str(sys.argv[6:])
+    if len(path)==0:
+        print "Path not found"
+        sys.exit(0)
+    sys.stdout = open('data/solution.out','w')
+    print "Final path to " + str(sys.argv[6:])
     while (len(path)>0):
         print path.pop()
 
