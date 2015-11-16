@@ -31,6 +31,7 @@ if __name__ == "__main__":
     if len(path)==0:
         print "Path not found"
         sys.exit(0)
+    print "Path found! Path saved in data/solution.out"
     sys.stdout = open('data/solution.out','w')
     print "Final path to " + str(sys.argv[6:])
     while (len(path)>0):
