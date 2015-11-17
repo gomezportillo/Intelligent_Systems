@@ -70,13 +70,13 @@ class Problem:
                 
             #sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
             
-        print "Analysis of the .som file:\nLines: " + str(i) + " | Nodes: " + str(n_nodes) + " | Connections: " + str(n_conex) + "\n"
+        '''print "Analysis of the .osm file:\nLines: " + str(i) + " | Nodes: " + str(n_nodes) + " | Connections: " + str(n_conex) + "\n"
         
         try:
             print self.hash_table[self.initial_state.node_map.key]
         except:
             print "Node "+ sys.argv[1] +" not available on this map" 
-            sys.exit(0)
+            sys.exit(0)'''
         
     def isGoal(self, state):
        return len(state.objetive_nodes) == 0
