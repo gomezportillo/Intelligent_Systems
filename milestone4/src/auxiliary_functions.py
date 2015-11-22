@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import math
+import math, sys
 
 class Searching_Strategies:
     BFS = 0
@@ -21,3 +21,4 @@ def distance_on_unit_sphere(coord1, coord2):
     cos = (math.sin(phi1) * math.sin(phi2) * math.cos(theta1 - theta2) + math.cos(phi1) * math.cos(phi2))
     
     return math.acos(cos) * 6371000
+

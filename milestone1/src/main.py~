@@ -1,5 +1,7 @@
 #! /usr/bin/env python
 
+# import Node
+
 class Adyacent_Node:
     """Class repressenting an adyacent node to another, giving its node and the distance"""
    

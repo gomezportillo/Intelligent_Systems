@@ -12,7 +12,7 @@ class State_Space: #hacer un constructor con los limites geograficos del mapa
         
 
     def getSuccessors(self, prev_state, hash_table):
-        """ This method will return a list with the successors of a given state
+        """ This method will return a list with the successors of given state
         """
         successors_list = []
         ady_list = hash_table[prev_state.node_map.key].ady_list[:]

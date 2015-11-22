@@ -133,16 +133,16 @@ class Problem:
             value = 0
 
             if strategy == Searching_Strategies.BFS:
-                value = depth
+                value = parent_node.depth + 1
 
             elif strategy == Searching_Strategies.DFS:
-                value = -depth
+                value = -(parent_node.depth + 1)
 
             elif strategy == Searching_Strategies.DLS:
-                value = -depth
+                value = -(parent_node.depth + 1)
 
             elif strategy == Searching_Strategies.IDS:
-                value = -depth
+                value = -(parent_node.depth + 1)
 
             elif strategy == Searching_Strategies.UC:
                 value = cost

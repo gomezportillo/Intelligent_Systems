@@ -1,0 +1,7 @@
+Node #3753271186, value: 0, street: None
+Node #3753271185, value: 22.7959399741, street: Autovía Extremadura - Comunidad Valenciana
+Node #3753271186, value: 45.5918799481, street: Autovía Extremadura - Comunidad Valenciana
+Node #3753271185, value: 68.3878199222, street: Autovía Extremadura - Comunidad Valenciana
+Node #3753271184, value: 141.203750447, street: Autovía Extremadura - Comunidad Valenciana
+Node #3753271183, value: 249.630459376, street: Autovía Extremadura - Comunidad Valenciana
+Node #3753271182, value: 326.233597766, street: Autovía Extremadura - Comunidad Valenciana
