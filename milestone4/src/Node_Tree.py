@@ -32,4 +32,6 @@ class Node_Tree:
 
     def __repr__(self):
         return "Node #" +str(self.state.node_map.key) + ", value: " + str(self.value) + ", street: " + str(self.action)
+    def toGPX(self):
+        return '\t\t<trkpt lat="' +str(self.state.node_map.latitud) + '" lon="' + str(self.state.node_map.longitud) + '"><ele>628</ele><time>2007-10-14T10:09:57</time></trkpt>\n'
 

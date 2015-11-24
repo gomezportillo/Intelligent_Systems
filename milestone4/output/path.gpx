@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1">
+	<metadata>
+		<name>GHoalsd</name>
+		<desc>Fhasoidfjs</desc>
+	</metadata>
+	<name>Example gpx</name>
+		<trk><name>Route</name><number>1</number><trkseg>
+		<trkpt lat="38.9674041" lon="-3.9333465"><ele>628</ele><time>2007-10-14T10:09:57</time></trkpt>
+		<trkpt lat="38.9672930" lon="-3.9335681"><ele>628</ele><time>2007-10-14T10:09:57</time></trkpt>
+		<trkpt lat="38.9667015" lon="-3.9339295"><ele>628</ele><time>2007-10-14T10:09:57</time></trkpt>
+		<trkpt lat="38.9657859" lon="-3.9343609"><ele>628</ele><time>2007-10-14T10:09:57</time></trkpt>
+		<trkpt lat="38.9651219" lon="-3.9345970"><ele>628</ele><time>2007-10-14T10:09:57</time></trkpt>
+	</trkseg></trk>
+</gpx>
