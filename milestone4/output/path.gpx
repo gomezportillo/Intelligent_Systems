@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gpx version="1.0">
-	<name>Example gpx</name>
+<gpx version="1.1">
+	<name>Final route</name>
 		<trk><name>Route</name><number>1</number><trkseg>
 		<trkpt lat="38.9674041" lon="-3.9333465"><ele>628</ele><time>2007-10-14T10:09:57</time></trkpt>
 		<trkpt lat="38.9675448" lon="-3.9329355"><ele>628</ele><time>2007-10-14T10:09:57</time></trkpt>
