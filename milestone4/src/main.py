@@ -102,13 +102,27 @@ def create_solution(final_node):
         stack.append(current_node.parent)
         current_node = current_node.parent
 
+    generateGPX(stack)
+
+
+def generateGPX(stack):
     output_file = 'output/path.gpx'
     print "Path generated on " + output_file
+
     with open(output_file, 'w+') as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.0">\n\t<name>Example gpx</name>\n\t\t<trk><name>Route</name><number>1</number><trkseg>\n')
-        while (len(stack)>0):
+        while len(stack)>0:
             f.write(stack.pop().toGPX())
         f.write('\t</trkseg></trk>\n</gpx>')
+
+
+def generateTXT(stack):
+    output_file = 'output/path.txt'
+    print "Path generated on " + output_file
+
+    with open(output_file, 'w+') as f:
+        while len(stack)>0:
+            f.write(str(stack.pop())+"\n")
 
 
 if __name__ == "__main__":
@@ -123,6 +137,6 @@ if __name__ == "__main__":
 
     problem.build_hash_table()
 
-    path = search(problem, Searching_Strategies.UC)
+    path = search(problem, Searching_Strategies.BFS)
 
     sys.exit(0)

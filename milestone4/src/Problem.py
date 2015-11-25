@@ -71,8 +71,9 @@ class Problem:
             #sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
             
         print "Analysis of the .osm file: lines: " + str(i) + ", nodes: " + str(n_nodes) + ", connections: " + str(n_conex)
-        self.initial_state.node_map = self.hash_table[sys.argv[1]]
-        try: #preguntar si esto lo deberiamos seguir haciendo
+        
+        try:
+            self.initial_state.node_map = self.hash_table[sys.argv[1]] 
             self.hash_table[self.initial_state.node_map.key]
         except:
             print "Node "+ sys.argv[1] +" not available on this map" 
