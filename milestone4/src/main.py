@@ -82,6 +82,13 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
 
        elif strategy == Searching_Strategies.UC:
            value = cost
+       
+       elif strategy == Searching_Strategies.AStar:
+           temp = 0
+           
+           if(len(state.objetive_nodes)):
+                temp = distance_on_unit_sphere(state.node_map,problem.hash_table[state.objetive_nodes[0]])
+           value = cost + temp
 
        current_succesor = Node_Tree(state, cost, street, depth, parent, value)                 
 
