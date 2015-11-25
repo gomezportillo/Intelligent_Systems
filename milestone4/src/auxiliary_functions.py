@@ -8,6 +8,7 @@ class Searching_Strategies:
     DLS = 2
     IDS = 3
     UC = 4
+    AStar = 5
 
 
 def distance_on_unit_sphere(coord1, coord2):
