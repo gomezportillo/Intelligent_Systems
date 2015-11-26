@@ -3,11 +3,12 @@
 class Node_Map:
     """Class repressenting a node in our graph
     """   
-    def __init__(self, k, lat=0, lon=0):
+    def __init__(self, k, lat=0, lon=0, value=float('inf')):
         self.key = k
         self.latitud = lat
         self.longitud = lon
         self.ady_list = []
+        self.BestValue = value
 
     def add_node(self, ady_node):
         self.ady_list.append(ady_node)
