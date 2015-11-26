@@ -15,6 +15,8 @@ if len(sys.argv) < 7:
     print(__doc__.format(__file__))
     sys.exit(0)
 
+prune = raw_input("Make prune? (Y/N)\n")
+
 def search(problem, strategy, max_depth=10000, incr_depth=1):
         
     current_depth = incr_depth
@@ -89,11 +91,16 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
            else:            
                 value = cost
                 
-       if value < problem.hash_table[state.node_map.key].BestValue:
-       
-          problem.hash_table[state.node_map.key].BestValue = value
-          current_succesor = Node_Tree(state, cost, street, depth, parent, value)
-          successor_nodes.append(current_succesor)
+       if prune == 'Y':
+           if value < problem.hash_table[state.node_map.key].BestValue:
+                
+                problem.hash_table[state.node_map.key].BestValue = value
+                current_succesor = Node_Tree(state, cost, street, depth, parent, value)
+                successor_nodes.append(current_succesor)
+                
+       else:
+           current_succesor = Node_Tree(state, cost, street, depth, parent, value)
+           successor_nodes.append(current_succesor)
 
     return successor_nodes
         
