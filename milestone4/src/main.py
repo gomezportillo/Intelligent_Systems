@@ -88,10 +88,12 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
                 value = cost +  distance_on_unit_sphere(state.node_map,problem.hash_table[state.objetive_nodes[0]])
            else:            
                 value = cost
-
-       current_succesor = Node_Tree(state, cost, street, depth, parent, value)                 
-
-       successor_nodes.append(current_succesor)
+                
+       if value < problem.hash_table[state.node_map.key].BestValue:
+       
+          problem.hash_table[state.node_map.key].BestValue = value
+          current_succesor = Node_Tree(state, cost, street, depth, parent, value)
+          successor_nodes.append(current_succesor)
 
     return successor_nodes
         
