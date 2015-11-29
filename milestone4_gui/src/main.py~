@@ -20,7 +20,6 @@ class MyApp:
         boundary_coordinates = coordinates
         self.problem = Problem(State_Space(boundary_coordinates), initial_state)
         self.prune = True
-
     def build_hash_table(self):
         return self.problem.build_hash_table()
 

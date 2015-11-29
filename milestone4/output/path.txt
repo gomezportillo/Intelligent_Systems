@@ -1,9 +1,0 @@
-Node #3753271186, value: 0, street: None
-Node #818781140, value: 1, street: Autovía Extremadura - Comunidad Valenciana
-Node #818781159, value: 2, street: Calle General Espartero
-Node #818781140, value: 3, street: Calle General Espartero
-Node #3753271186, value: 4, street: Autovía Extremadura - Comunidad Valenciana
-Node #3753271185, value: 5, street: Autovía Extremadura - Comunidad Valenciana
-Node #3753271184, value: 6, street: Autovía Extremadura - Comunidad Valenciana
-Node #3753271183, value: 7, street: Autovía Extremadura - Comunidad Valenciana
-Node #3753271182, value: 8, street: Autovía Extremadura - Comunidad Valenciana

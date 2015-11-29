@@ -1,6 +1,7 @@
-import sys
+import sys, time
 from main import MyApp
 from auxiliary_functions import Searching_Strategies
+
 try:
     from gi.repository import Gtk as gtk
 except:
@@ -38,10 +39,10 @@ class GUI:
         coordinates = (min_lat, min_lon, max_lat, max_lon)
 
         self.myapp = MyApp(init_node, obj_nodes, coordinates)
-        
+        self.myapp.prune = self.builder.get_object('prune_switch').get_active()
         msg = self.myapp.build_hash_table()
           
-        self.builder.get_object('info_lbl').set_text(msg)
+        self.builder.get_object('info_lbl').set_markup('<span foreground="green">'+msg+'</span>')
 
         strategy = ''
         if self.builder.get_object('bfs_rb').get_active():
@@ -61,8 +62,20 @@ class GUI:
 
         elif self.builder.get_object('a_rb').get_active():
             strategy = Searching_Strategies.AStar
+        else:
+            self.builder.get_object('info_lbl').set_markup('<span foreground="red">Please select any searching strategy</span>') 
+            return
 
+        self.builder.get_object('info_lbl').set_markup('<span foreground="green">Expanding tree...</span>') 
 
+        max_depth = self.builder.get_object('max_depth_sb').get_text()
+        iter_depth = self.builder.get_object('iter_depth_sb').get_text()
+        print "Searchin..."
+
+        a = self.myapp.search_iface(strategy, max_depth, iter_depth)
+
+        if a is not None: self.builder.get_object('info_lbl').set_markup('<span foreground="green">Solution wrote on data/path.gpx</span>') 
+        print "Done"
 
 
     def show_about(self, button):
@@ -72,7 +85,6 @@ class GUI:
         self.dialog.set_license(open('LICENSE.txt', 'r').read())
         self.dialog.run()
         self.dialog.destroy()
-
 
     def exit(self, button):
         sys.exit(1)

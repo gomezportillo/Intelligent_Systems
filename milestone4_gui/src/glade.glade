@@ -551,102 +551,62 @@
                 <property name="label_xalign">0</property>
                 <property name="shadow_type">etched-out</property>
                 <child>
-                  <object class="GtkFrame" id="frame12">
+                  <object class="GtkGrid" id="grid5">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label_xalign">0</property>
-                    <property name="shadow_type">none</property>
+                    <property name="row_spacing">5</property>
+                    <property name="column_spacing">20</property>
+                    <property name="row_homogeneous">True</property>
+                    <property name="column_homogeneous">True</property>
                     <child>
-                      <object class="GtkFrame" id="frame9">
+                      <object class="GtkLabel" id="label17">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label_xalign">0</property>
-                        <property name="shadow_type">none</property>
-                        <child>
-                          <object class="GtkAlignment" id="alignment6">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="left_padding">12</property>
-                            <child>
-                              <object class="GtkGrid" id="grid5">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="row_spacing">5</property>
-                                <property name="column_spacing">20</property>
-                                <property name="column_homogeneous">True</property>
-                                <child>
-                                  <object class="GtkLabel" id="label17">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="tooltip_text" translatable="yes">The initial state of the search problem</property>
-                                    <property name="label" translatable="yes">Initial state</property>
-                                    <property name="ellipsize">end</property>
-                                    <property name="xalign">0.15000000596046448</property>
-                                  </object>
-                                  <packing>
-                                    <property name="left_attach">0</property>
-                                    <property name="top_attach">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="label18">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="tooltip_text" translatable="yes">A list separated by commas ',' with all the objetive nodes</property>
-                                    <property name="label" translatable="yes">Objetive nodes</property>
-                                    <property name="xalign">0.15000000596046448</property>
-                                  </object>
-                                  <packing>
-                                    <property name="left_attach">0</property>
-                                    <property name="top_attach">1</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkEntry" id="initial_tb">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
-                                    <property name="text" translatable="yes">3753271186</property>
-                                    <property name="input_purpose">number</property>
-                                  </object>
-                                  <packing>
-                                    <property name="left_attach">1</property>
-                                    <property name="top_attach">0</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkEntry" id="objetive_tb">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
-                                    <property name="text" translatable="yes">812954647, 525959919, 812954639</property>
-                                  </object>
-                                  <packing>
-                                    <property name="left_attach">1</property>
-                                    <property name="top_attach">1</property>
-                                  </packing>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child type="label">
-                          <object class="GtkLabel" id="label16">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <attributes>
-                              <attribute name="size" value="10"/>
-                            </attributes>
-                          </object>
-                        </child>
+                        <property name="tooltip_text" translatable="yes">The initial state of the search problem</property>
+                        <property name="label" translatable="yes">Initial state</property>
+                        <property name="ellipsize">end</property>
+                        <property name="xalign">0.15000000596046448</property>
                       </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
                     </child>
-                    <child type="label">
-                      <object class="GtkLabel" id="label1">
+                    <child>
+                      <object class="GtkLabel" id="label18">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <attributes>
-                          <attribute name="size" value="50"/>
-                        </attributes>
+                        <property name="tooltip_text" translatable="yes">A list separated by commas ',' with all the objetive nodes</property>
+                        <property name="label" translatable="yes"> Objetive nodes</property>
+                        <property name="xalign">0.15000000596046448</property>
                       </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="initial_tb">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="text" translatable="yes">3753271186</property>
+                        <property name="input_purpose">number</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="objetive_tb">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="text" translatable="yes">812954647, 525959919, 812954639</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">1</property>
+                      </packing>
                     </child>
                   </object>
                 </child>
@@ -843,7 +803,7 @@
             <property name="tooltip_text" translatable="yes">Information</property>
             <property name="halign">start</property>
             <property name="margin_left">25</property>
-            <property name="label" translatable="yes">Information</property>
+            <property name="use_markup">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
