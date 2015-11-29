@@ -40,6 +40,7 @@ class GUI:
             prune = 'Y '
         else:
             prune = 'N '
+        print "'"+prune+"'"
 
         command = "src/main.py " + prune + str(init_node)+" "
         for coor in coordinates:

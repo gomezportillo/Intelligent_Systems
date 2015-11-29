@@ -1,19 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"Usage: python {0} <prune> <search_algorithm> <node> <latMin> <longMin> <latMax> <longMax> <objetive_node1>...<objetive_nodeN>"
+"Usage: python {0} <node> <latMin> <longMin> <latMax> <longMax> <objetive_node1>...<objetive_nodeN>"
 
 from State import State
 from Node_Tree import Node_Tree
 from Node_Map import Node_Map
 from State_Space import State_Space
 from Problem import Problem
-from auxiliary_functions import Searching_Strategies
-import sys
+from auxiliary_functions import *
+import sys, datetime
 import heapq
 
-if len(sys.argv) < 8:
+if len(sys.argv) < 7:
     print(__doc__.format(__file__))
     sys.exit(0)
+
+prune = raw_input("Make prune? (Y/N)\n")
 
 def search(problem, strategy, max_depth=10000, incr_depth=1):
         
@@ -88,14 +90,14 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
                 value = cost +  distance_on_unit_sphere(state.node_map,problem.hash_table[state.objetive_nodes[0]])
            else:            
                 value = cost
-       
-       global prune    
-       if prune == 'Y':
-           if value < problem.hash_table[state.node_map.key].BestValue:
+                
+       if prune.find('Y'):
+           if value < problem.hash_table[state.node_map.key].BestValue:                
                 problem.hash_table[state.node_map.key].BestValue = value
                 current_succesor = Node_Tree(state, cost, street, depth, parent, value)
                 successor_nodes.append(current_succesor)
-                
+           else:
+                pass     
        else:
            current_succesor = Node_Tree(state, cost, street, depth, parent, value)
            successor_nodes.append(current_succesor)
@@ -105,7 +107,7 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
 
 
 def create_solution(final_node):
-    """ This method will write the obtained path onto a file
+    """ This method will write the obtained path into a file
     """
 
     current_node = final_node
@@ -115,8 +117,8 @@ def create_solution(final_node):
         stack.append(current_node.parent)
         current_node = current_node.parent
 
-    generateGPX(stack)
-
+    generateGPX(stack[:])
+    generateTXT(stack[:])
 
 def generateGPX(stack):
     output_file = 'output/path.gpx'
@@ -139,24 +141,24 @@ def generateTXT(stack):
 
 
 if __name__ == "__main__":
+    
+    print "Looking for nodes " + str(sys.argv[6:])
 
-    print "Looking for nodes " + str(sys.argv[7:])
+    initial_state = State(Node_Map(sys.argv[1]), sys.argv[6:])
 
-    global prune
-    prune = sys.argv[1]
-
-    initial_state = State(Node_Map(sys.argv[2]), sys.argv[7:])
-
-    boundary_coordinates = (sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6])
+    boundary_coordinates = (sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
 
     problem = Problem(State_Space(boundary_coordinates), initial_state)
 
     problem.build_hash_table()
 
-    path = search(problem, Searching_Strategies.BFS)
+    search_strat = Searching_Strategies.DFS
 
-    if not path:
-        print "No solution found"
+    timestamp1 = datetime.datetime.now()
+    path = search(problem, search_strat)
+    print "Time taken to accomplish the search: " + str(datetime.datetime.now() - timestamp1)
 
     sys.exit(0)
+
+
 

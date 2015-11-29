@@ -15,9 +15,6 @@ if len(sys.argv) < 8:
     print(__doc__.format(__file__))
     sys.exit(0)
 
-global prune
-prune = ''
-
 def search(problem, strategy, max_depth=10000, incr_depth=1):
         
     current_depth = incr_depth
@@ -54,7 +51,6 @@ def bounded_search(problem, strategy, max_depth=10000):
         create_solution(current_node)
         return True
     else:
-        print "No solution found"
         return None 
     
 
@@ -94,10 +90,8 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
                 value = cost
        
        global prune    
-       if prune.find('Y'):
-           print "Entocntarda"
+       if prune == 'Y':
            if value < problem.hash_table[state.node_map.key].BestValue:
-                print "Mejor que-----------------------------------------"
                 problem.hash_table[state.node_map.key].BestValue = value
                 current_succesor = Node_Tree(state, cost, street, depth, parent, value)
                 successor_nodes.append(current_succesor)
@@ -160,5 +154,6 @@ if __name__ == "__main__":
     problem.build_hash_table()
 
     path = search(problem, Searching_Strategies.BFS)
-
+    if not path:
+        print "No solution found"
     sys.exit(0)

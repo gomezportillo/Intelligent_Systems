@@ -37,9 +37,10 @@ class GUI:
         coordinates = (min_lat, min_lon, max_lat, max_lon)
 
         if self.builder.get_object('prune_switch').get_active():
-            prune = 'Y'
+            prune = 'Y '
         else:
-            prune = 'N'
+            prune = 'N '
+        print "'"+prune+"'
 
         command = "src/main.py " + prune + str(init_node)+" "
         for coor in coordinates:

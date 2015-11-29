@@ -7,8 +7,8 @@ from Node_Tree import Node_Tree
 from Node_Map import Node_Map
 from State_Space import State_Space
 from Problem import Problem
-from auxiliary_functions import Searching_Strategies
-import sys
+from auxiliary_functions import *
+import sys, datetime
 import heapq
 
 if len(sys.argv) < 7:
@@ -91,13 +91,13 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
            else:            
                 value = cost
                 
-       if prune == 'Y':
-           if value < problem.hash_table[state.node_map.key].BestValue:
-                
+       if prune.find('Y'):
+           if value < problem.hash_table[state.node_map.key].BestValue:                
                 problem.hash_table[state.node_map.key].BestValue = value
                 current_succesor = Node_Tree(state, cost, street, depth, parent, value)
                 successor_nodes.append(current_succesor)
-                
+           else:
+                pass     
        else:
            current_succesor = Node_Tree(state, cost, street, depth, parent, value)
            successor_nodes.append(current_succesor)
@@ -107,7 +107,7 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
 
 
 def create_solution(final_node):
-    """ This method will write the obtained path onto a file
+    """ This method will write the obtained path into a file
     """
 
     current_node = final_node
@@ -117,8 +117,8 @@ def create_solution(final_node):
         stack.append(current_node.parent)
         current_node = current_node.parent
 
-    generateGPX(stack)
-
+    generateGPX(stack[:])
+    generateTXT(stack[:])
 
 def generateGPX(stack):
     output_file = 'output/path.gpx'
@@ -141,7 +141,7 @@ def generateTXT(stack):
 
 
 if __name__ == "__main__":
-
+    
     print "Looking for nodes " + str(sys.argv[6:])
 
     initial_state = State(Node_Map(sys.argv[1]), sys.argv[6:])
@@ -152,6 +152,13 @@ if __name__ == "__main__":
 
     problem.build_hash_table()
 
-    path = search(problem, Searching_Strategies.BFS)
+    search_strategy = Searching_Strategies.DFS
+
+    timestamp1 = datetime.datetime.now()
+    path = search(problem, search_strategy)
+    print "Time taken to accomplish the search: " + str(datetime.datetime.now() - timestamp1)
 
     sys.exit(0)
+
+
+
