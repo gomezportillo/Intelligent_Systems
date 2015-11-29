@@ -51,16 +51,7 @@ class GUI:
             strategy = Searching_Strategies.BFS
 
         elif self.builder.get_object('dls_rb').get_active():
-            strategy = Searching_Strategies.BLS
-
-        elif self.builder.get_object('ids_rb').get_active():
-            strategy = Searching_Strategies.IDS
-
-        elif self.builder.get_object('uc_rb').get_active():
-            strategy = Searching_Strategies.UC
-
-        elif self.builder.get_object('a_rb').get_active():
-            strategy = Searching_Strategies.AStar
+            strategy = Searching_Strategies.BFS
 
 
 
