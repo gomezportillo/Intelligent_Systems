@@ -148,6 +148,7 @@ class Problem:
                 value = cost
 
             current_succesor = Node_Tree(state, cost, street, depth, parent, value)                 
+
             successor_nodes.append(current_succesor)
 
         return successor_nodes

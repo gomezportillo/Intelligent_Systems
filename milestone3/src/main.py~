@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     p.build_hash_table()
 
-    path = p.search(Searching_Strategies.BFS)
+    path = p.search(Searching_Strategies.UC)
     if len(path)==0:
         print "Path not found"
         sys.exit(0)

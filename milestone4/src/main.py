@@ -15,8 +15,6 @@ if len(sys.argv) < 7:
     print(__doc__.format(__file__))
     sys.exit(0)
 
-prune = raw_input("Make prune? (Y/N)\n")
-
 def search(problem, strategy, max_depth=10000, incr_depth=1):
         
     current_depth = incr_depth
@@ -90,14 +88,16 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
                 value = cost +  distance_on_unit_sphere(state.node_map,problem.hash_table[state.objetive_nodes[0]])
            else:            
                 value = cost
-                
-       if prune.find('Y'):
+       else:
+           raise InvalidSearchAlgorithmException
+   
+
+       if prune.find('Y') != -1:
            if value < problem.hash_table[state.node_map.key].BestValue:                
                 problem.hash_table[state.node_map.key].BestValue = value
                 current_succesor = Node_Tree(state, cost, street, depth, parent, value)
                 successor_nodes.append(current_succesor)
-           else:
-                pass     
+  
        else:
            current_succesor = Node_Tree(state, cost, street, depth, parent, value)
            successor_nodes.append(current_succesor)
@@ -141,7 +141,13 @@ def generateTXT(stack):
 
 
 if __name__ == "__main__":
-    
+    search_strategy = int(raw_input("Search algorithm? (BFS = 0, DFS = 1, DLS = 2, IDS = 3, UC = 4, AStar = 5)\n"))
+    if not search_strategy in range(6):
+        print("Invalid search algorithm. Exiting...")
+        sys.exit(0)        
+
+    prune = raw_input("Make prune? (Y/N)\n")    
+
     print "Looking for nodes " + str(sys.argv[6:])
 
     initial_state = State(Node_Map(sys.argv[1]), sys.argv[6:])
@@ -151,8 +157,6 @@ if __name__ == "__main__":
     problem = Problem(State_Space(boundary_coordinates), initial_state)
 
     problem.build_hash_table()
-
-    search_strategy = Searching_Strategies.DFS
 
     timestamp1 = datetime.datetime.now()
     path = search(problem, search_strategy)
