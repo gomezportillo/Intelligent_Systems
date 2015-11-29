@@ -155,7 +155,7 @@ if __name__ == "__main__":
         print("Invalid search algorithm. Exiting...")
         sys.exit(0)        
 
-    prune = raw_input("Make prune? (Y/N)\n")    
+    prune = raw_input("Execute prune? (Y/N)\n")    
 
     print "Looking for nodes " + str(sys.argv[6:])
 

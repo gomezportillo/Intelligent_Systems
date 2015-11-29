@@ -1,9 +1,0 @@
-Node #812954451, value: 0, street: None
-Node #812954453, value: 1, street: Plaza Mayor
-Node #812954639, value: 2, street: Calle María Cristina
-Node #812954664, value: 3, street: Calle Cruz
-Node #812954647, value: 4, street: Calle Cruz
-Node #525959937, value: 5, street: Calle de la Paloma
-Node #812954421, value: 6, street: Calle de la Paloma
-Node #804689167, value: 7, street: Calle de la Paloma
-Node #525959919, value: 8, street: Calle de la Paloma

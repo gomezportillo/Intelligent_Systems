@@ -1,8 +1,9 @@
 #******************************************************
-#******************  DOCUMENTATION  *******************
+#*********************  README  ***********************
 #******************************************************
 
-Python program to generate a graph into a hash table from a .osm file and work within it.
+Python program to generate a graph into a hash table from
+a .osm file and work within it.
 
 #****** AUTHORS
 
@@ -12,14 +13,3 @@ Juan Garrido Arcos
 Pedro-Manuel Gómez-Portillo López 
     - pedromanuel.gomezportillo@alu.uclm.es
 
-#****** BRIEF MANUAL
-
-Should you want to execute this program, a Makefile has been writen for 
-this purpose.
-
-Being at the root directory of this project, execute $make:
-    - build: to download the .osm file of the map of Ciudad Real (~3MB)
-      and apply the appropriate permissions to the executable     
-    - test: for executing the program with a right node
-    - test_error: for executing the program with an invalid node
-    - clean: for removing the map you have previously downloaded
