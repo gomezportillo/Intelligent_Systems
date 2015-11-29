@@ -107,6 +107,7 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
     return successor_nodes
         
 
+
 def create_solution(final_node):
     """ This method will write the obtained path into a file
     """
