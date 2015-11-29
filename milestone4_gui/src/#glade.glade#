@@ -818,15 +818,40 @@
             <property name="label_yalign">0</property>
             <property name="shadow_type">none</property>
             <child>
-              <object class="GtkButton" id="generate_path">
-                <property name="label" translatable="yes">Generate GPX file</property>
+              <object class="GtkGrid" id="grid7">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">Generate the GPX file</property>
-                <property name="hexpand">True</property>
-                <property name="vexpand">True</property>
-                <signal name="clicked" handler="generate_path_button" swapped="no"/>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkButton" id="generate_path">
+                    <property name="label" translatable="yes">Generate GPX file</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">Generate the GPX file</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                    <signal name="clicked" handler="generate_path_button" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="load_parameters">
+                    <property name="label" translatable="yes">Generate GPX file</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">Generate the GPX file</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
               </object>
             </child>
           </object>

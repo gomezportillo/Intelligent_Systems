@@ -23,3 +23,6 @@ def distance_on_unit_sphere(coord1, coord2):
     
     return math.acos(cos) * 6371000
 
+bold = '\033[1m'
+red_nd_bold = '\033[91m' + bold                 #for printing errors
+end_format = '\033[0m'                          #for ending the format

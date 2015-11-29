@@ -70,15 +70,19 @@ class Problem:
                 
             #sys.stdout.write("\r" + str(int(round((float(i)/len(lines))*100))) + "% of the data imported from the .osm file")
             
-        print "Analysis of the .osm file: lines: " + str(i) + ", nodes: " + str(n_nodes) + ", connections: " + str(n_conex)
+        result = "Analysis of the .osm file: lines: " + str(i) + ", nodes: " + str(n_nodes) + ", connections: " + str(n_conex)
+        print result
         
         try:
-            self.initial_state.node_map = self.hash_table[sys.argv[1]] 
+            self.initial_state.node_map = self.hash_table[self.initial_state.node_map.key] 
             self.hash_table[self.initial_state.node_map.key]
         except:
-            print "Node "+ sys.argv[1] +" not available on this map" 
+            print "Node "+ str(self.initial_state.node_map.key) +" not available on this map" 
             sys.exit(0)
         
+        return result
+
+
     def isGoal(self, state):
        return len(state.objetive_nodes) == 0
 
