@@ -1,11 +1,11 @@
-all: test
+all: test1
 
 build:
 	chmod 755 ./src/main.py
 	mkdir -p ./data
 	wget -O ./data/map.osm http://api.openstreetmap.org/api/0.6/map?bbox=-3.9719000,38.9650000,-3.8847000,39.0062000	
 
-test:
+test1:
 	python src/main.py 3753271186 -3.9719000 38.9650000 -3.8847000 39.0062000 3753271182 818781159
 
 test2:
