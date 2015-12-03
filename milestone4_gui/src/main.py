@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"Usage: python {0} <prune> <search_algorithm> <node> <latMin> <longMin> <latMax> <longMax> <objetive_node1>...<objetive_nodeN>"
+"Usage: python {0} <prune> <mem> <search_algorithm> <node> <latMin> <longMin> <latMax> <longMax> <objetive_node1>...<objetive_nodeN>"
 
 from State import State
 from Node_Tree import Node_Tree
@@ -11,7 +11,7 @@ from auxiliary_functions import Searching_Strategies
 import sys
 import heapq
 
-if len(sys.argv) < 8:
+if len(sys.argv) < 10:
     print(__doc__.format(__file__))
     sys.exit(0)
 
@@ -140,23 +140,23 @@ def generateTXT(stack):
 
 if __name__ == "__main__":
 
-    print "Looking for nodes " + str(sys.argv[7:])
+    print "Looking for nodes " + str(sys.argv[9:])
 
     global prune
     prune = sys.argv[1]
-
-    initial_state = State(Node_Map(sys.argv[2]), sys.argv[7:])
-
-    boundary_coordinates = (sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6])
+    global mem
+    mem = sys.argv[2]
+    strategy = sys.argv[3]
+    initial_state = State(Node_Map(sys.argv[4]), sys.argv[9:])
+    boundary_coordinates = (sys.argv[5], sys.argv[6], sys.argv[7], sys.argv[8])
 
     problem = Problem(State_Space(boundary_coordinates), initial_state)
 
     problem.build_hash_table()
 
-    path = search(problem, Searching_Strategies.BFS)
+    path = search(problem, strategy)
 
     if not path:
         print "No solution found"
 
     sys.exit(0)
-

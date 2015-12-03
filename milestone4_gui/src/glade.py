@@ -1,5 +1,5 @@
 import sys, os
-from auxiliary_functions import Searching_Strategies
+from auxiliary_functions import Searching_Strategies, InvalidSearchStrategyException
 
 try:
     from gi.repository import Gtk as gtk
@@ -36,21 +36,28 @@ class GUI:
         min_lon = self.builder.get_object('min_lon_tb').get_text()
         coordinates = (min_lat, min_lon, max_lat, max_lon)
 
-        if self.builder.get_object('prune_switch').get_active():
-            prune = 'Y '
-        else:
-            prune = 'N '
-        print "'"+prune+"'"
+        if self.builder.get_object('prune_switch').get_active(): prune = 'Y '
+        else: prune = 'N '
 
-        command = "src/main.py " + prune + str(init_node)+" "
+        if self.builder.get_object('mem_switch').get_active(): mem = 'Y '
+        else: mem = 'N '
+    
+        try:
+            strategy = str(self.getStrategy()) + ' '     
+        except InvalidSearchStrategyException:
+            self.builder.get_object('info_lbl').set_text('Please select a search strategy')
+            return
+    
+        command = 'src/main.py ' + prune + mem + strategy + str(init_node)+" "
         for coor in coordinates:
-            command += str(coor) + " " 
+            command += str(coor) + ' ' 
         for node in obj_nodes:
             command += str(node)
 
         print "Executing: " + command
         os.system(command)
         print "Waiting for next search"
+        self.builder.get_object('info_lbl').set_text('Waiting for next search')
 
 
     def show_about(self, button):
@@ -64,7 +71,17 @@ class GUI:
     def exit(self, button):
         sys.exit(1)
 
-    
+    def getStrategy(self):    
+        print "strategy"
+        if self.builder.get_object('bfs_rb').get_active(): return 0
+        if self.builder.get_object('dfs_rb').get_active(): return 1
+        if self.builder.get_object('dls_rb').get_active(): return 2
+        if self.builder.get_object('ids_rb').get_active(): return 3
+        if self.builder.get_object('uc_rb').get_active(): return 4
+        if self.builder.get_object('a_rb').get_active(): return 5
+
+        raise InvalidSearchStrategyException
+
 gui = GUI()
 gtk.main()
 

@@ -23,3 +23,5 @@ def distance_on_unit_sphere(coord1, coord2):
     
     return math.acos(cos) * 6371000
 
+class InvalidSearchStrategyException(Exception):
+    pass
