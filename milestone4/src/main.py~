@@ -85,17 +85,15 @@ def create_nodes(successors_list, parent_node, max_depth, strategy): #en este me
             value = cost
         
         elif strategy == Searching_Strategies.AStar:  
-            if len(state.objetive_nodes): #revisado
-                 value = cost +  distance_on_unit_sphere(state.node_map,problem.hash_table[state.objetive_nodes[0]])
-            else:            
-                 value = cost
+            value = cost +  distance_on_unit_sphere(state.node_map,problem.hash_table[state.objetive_nodes[0]])
+
         else:
             raise InvalidSearchAlgorithmException
        
         global number_of_generated_nodes
         number_of_generated_nodes += 1
 
-        if prune.find('Y') != -1: #no tenemos en cuenta DFS!! ya
+        if prune.find('Y') != -1: #no tenemos en cuenta DFS!! ya si
             if abs(value) < abs(problem.hash_table[state.node_map.key].BestValue):                
                  problem.hash_table[state.node_map.key].BestValue = value
                  current_succesor = Node_Tree(state, cost, street, depth, parent, value)

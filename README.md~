@@ -26,4 +26,3 @@ make
       test_error: for executing the program with an invalid node
       clean: for deleting the binaries and temporaly files
       remove_all: for removing the map you have previously downloaded
-
