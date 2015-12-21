@@ -72,7 +72,7 @@ class GUI:
         sys.exit(1)
 
     def getStrategy(self):    
-        print "strategy"
+
         if self.builder.get_object('bfs_rb').get_active(): return 0
         if self.builder.get_object('dfs_rb').get_active(): return 1
         if self.builder.get_object('dls_rb').get_active(): return 2

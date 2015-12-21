@@ -16,6 +16,7 @@ test_error:
 
 clean:
 	@rm -f src/*.pyc src/*~ old_src/*.pyc old_src/*~
+	@echo "Binary and tmp files deleted"
 
 remove_all: clean
 	@rm -fR ./data
