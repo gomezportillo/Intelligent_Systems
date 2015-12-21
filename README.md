@@ -26,4 +26,4 @@ make
       clean: for deleting the binaries and temporaly files
 
 
-![GUI](https://bitbucket.org/pedroma-gomezp/intelligent_systems/src/1d61672757438a4165de2047c69e7210d2a6cb5b/milestone4_gui/doc/GUI.png)
+![GUI](https://bytebucket.org/pedroma-gomezp/intelligent_systems/raw/1d61672757438a4165de2047c69e7210d2a6cb5b/milestone4_gui/doc/GUI.png?token=56b64b01eede4e4c65e400345ba178bda2fe1383)
