@@ -27,6 +27,4 @@ make
 
 
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/gomezportillo/Intelligent_Systems/master/milestone4_gui/doc/GUI.png?raw=true" alt="FSM"/>
-</p>
+![Alt text](https://raw.githubusercontent.com/gomezportillo/Intelligent_Systems/master/milestone4_gui/doc/GUI.png?raw=true)
